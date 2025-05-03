@@ -330,6 +330,7 @@ input, select, textarea {
 		text-align: right;
 	}
 
+
 /* Form */
 
 	form {
@@ -1112,7 +1113,7 @@ input, select, textarea {
 		button.primary,
 		.button.primary {
 			background-color: #ffffff;
-			color: #1b1f22 !important;
+			color: #885577 !important;
 			font-weight: 600;
 		}
 
