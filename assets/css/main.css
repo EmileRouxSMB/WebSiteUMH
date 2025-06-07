@@ -1357,8 +1357,8 @@ input, select, textarea {
 				-ms-transition-delay: 0.25s;
 				transition-delay: 0.25s;
 				padding: 3rem 2rem;
-				max-height: 40rem;
-				overflow: hidden;
+				max-height: none;
+				overflow: visible;
 			}
 
 				#header .content .inner > :last-child {
