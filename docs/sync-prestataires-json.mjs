@@ -7,6 +7,7 @@ const __dirname = path.dirname(__filename);
 const repoRoot = path.resolve(__dirname, "..");
 const configPath = path.join(repoRoot, "assets", "js", "umh-config.js");
 const targetPath = path.join(repoRoot, "data", "prestataires.json");
+const apiUrlOverride = (process.env.SYNC_PRESTATAIRES_API_URL || "").trim();
 
 function extractApiUrl(configSource) {
   const match = configSource.match(/apiUrl:\s*"([^"]*)"/);
@@ -29,9 +30,9 @@ function validatePayload(data) {
 
 async function main() {
   const configSource = await readFile(configPath, "utf8");
-  const apiUrl = extractApiUrl(configSource);
+  const apiUrl = apiUrlOverride || extractApiUrl(configSource);
   if (!apiUrl) {
-    throw new Error("apiUrl est vide dans assets/js/umh-config.js.");
+    throw new Error("apiUrl est vide dans assets/js/umh-config.js et SYNC_PRESTATAIRES_API_URL n'est pas defini.");
   }
 
   const response = await fetch(apiUrl, {
@@ -41,7 +42,15 @@ async function main() {
   });
 
   if (!response.ok) {
-    throw new Error(`Echec de recuperation du JSON (${response.status}).`);
+    const bodyExcerpt = (await response.text()).slice(0, 400).replace(/\s+/g, " ").trim();
+    throw new Error(
+      [
+        `Echec de recuperation du JSON (${response.status} ${response.statusText}).`,
+        `URL demandee: ${apiUrl}`,
+        `URL finale: ${response.url}`,
+        bodyExcerpt ? `Extrait de la reponse: ${bodyExcerpt}` : ""
+      ].filter(Boolean).join("\n")
+    );
   }
 
   const rawBody = await response.text();
