@@ -27,6 +27,71 @@ function validatePayload(data) {
   }
 }
 
+function normalizeText(value) {
+  return String(value || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .trim()
+    .toLowerCase();
+}
+
+function getInstagramHandle(value) {
+  let raw = String(value || "").trim();
+  if (!raw) {
+    return "";
+  }
+
+  raw = raw.replace(/^https?:\/\/(www\.)?instagram\.com\//i, "");
+  raw = raw.replace(/^@/, "");
+  return raw.split(/[/?#]/)[0].trim().toLowerCase();
+}
+
+function buildPrestataireKey(prestataire) {
+  const instagramHandle = getInstagramHandle(prestataire && prestataire.instagram);
+  if (instagramHandle) {
+    return `instagram:${instagramHandle}`;
+  }
+
+  const nomCommercial = normalizeText(prestataire && prestataire.nomCommercial);
+  if (nomCommercial) {
+    return `nom:${nomCommercial}`;
+  }
+
+  return "";
+}
+
+function mergeExistingPhotoFields(nextData, currentData) {
+  const currentPrestataires = Array.isArray(currentData && currentData.prestataires)
+    ? currentData.prestataires
+    : [];
+
+  const currentByKey = new Map();
+  currentPrestataires.forEach((prestataire) => {
+    const key = buildPrestataireKey(prestataire);
+    if (key) {
+      currentByKey.set(key, prestataire);
+    }
+  });
+
+  nextData.prestataires = nextData.prestataires.map((prestataire) => {
+    const key = buildPrestataireKey(prestataire);
+    if (!key) {
+      return prestataire;
+    }
+
+    const currentPrestataire = currentByKey.get(key);
+    if (!currentPrestataire) {
+      return prestataire;
+    }
+
+    if (!String(prestataire.photo || "").trim() && String(currentPrestataire.photo || "").trim()) {
+      prestataire.photo = currentPrestataire.photo;
+    }
+
+    return prestataire;
+  });
+}
+
 async function main() {
   const configSource = await readFile(configPath, "utf8");
   const apiUrl = extractApiUrl(configSource);
@@ -47,7 +112,6 @@ async function main() {
   const data = await response.json();
   validatePayload(data);
 
-  const formatted = JSON.stringify(data, null, 2) + "\n";
   let current = "";
   try {
     current = await readFile(targetPath, "utf8");
@@ -56,6 +120,14 @@ async function main() {
       throw error;
     }
   }
+
+  let currentData = null;
+  if (current) {
+    currentData = JSON.parse(current);
+    mergeExistingPhotoFields(data, currentData);
+  }
+
+  const formatted = JSON.stringify(data, null, 2) + "\n";
 
   if (current === formatted) {
     console.log("prestataires.json est deja a jour.");
