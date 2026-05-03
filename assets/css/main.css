@@ -1829,7 +1829,7 @@ input, select, textarea {
 		height: auto;
 		line-height: 1.3;
 		padding: 0;
-		color: var(--umh-purple);
+		color: var(--umh-purple) !important;
 		font-size: 0.88rem;
 		font-weight: 600;
 		letter-spacing: 0;
@@ -1856,7 +1856,13 @@ input, select, textarea {
 
 	#header nav ul li a:hover {
 		background: transparent;
-		color: var(--umh-purple-dark);
+		color: var(--umh-purple-dark) !important;
+	}
+
+	#header nav ul li a:visited,
+	#header nav ul li a:focus,
+	#header nav ul li a:active {
+		color: var(--umh-purple) !important;
 	}
 
 	#header .content {

@@ -5,9 +5,6 @@
 	const photoFile = document.getElementById("photoFile");
 	const status = document.getElementById("submit-status");
 	const apiUrl = (window.UMH_CONFIG && window.UMH_CONFIG.apiUrl ? String(window.UMH_CONFIG.apiUrl) : "").trim();
-	const configuredTypes = Array.isArray(window.UMH_CONFIG && window.UMH_CONFIG.prestationOptions)
-		? window.UMH_CONFIG.prestationOptions.map(function (v) { return String(v).trim(); }).filter(Boolean)
-		: [];
 
 	if (!form || !typeSelect || !typeCustom || !status) {
 		return;
@@ -15,7 +12,7 @@
 
 	const maxPhotoSize = 5 * 1024 * 1024;
 	const acceptedPhotoTypes = ["image/jpeg", "image/png", "image/webp"];
-	const defaultTypes = ["Lieu", "Photo / Vidéo", "Traiteur", "Coiffure", "Maquillage", "Animation", "Musique / DJ", "Décoration", "Officiant de cérémonie", "Service / Maitre d'hôtel", "Création robes de mariées", "Cadeaux personnalisés", "Papeterie","Fleuriste", "Patisserie", "Autre"];
+	const defaultTypes = ["Lieu", "Photo / Vidéo", "Traiteur", "Coiffure", "Maquillage", "Animation", "Musique / DJ", "Décoration", "Officiant de cérémonie", "Service / Maitre d'hôtel", "Création robes de mariées", "Cadeaux personnalisés", "Papeterie", "Fleuriste", "Patisserie", "Autre"];
 
 	function getTodayDate() {
 		return new Date().toISOString().slice(0, 10);
@@ -142,24 +139,7 @@
 	}
 
 	function loadTypes() {
-		if (configuredTypes.length) {
-			fillTypeOptions(configuredTypes);
-			return;
-		}
-
-		fetch("data/prestataires.json")
-			.then(function (response) {
-				if (!response.ok) throw new Error("types");
-				return response.json();
-			})
-			.then(function (data) {
-				const fromData = Array.isArray(data && data.typeDePrestationOptions) ? data.typeDePrestationOptions : [];
-				const types = fromData.length ? fromData : defaultTypes;
-				fillTypeOptions(types);
-			})
-			.catch(function () {
-				fillTypeOptions(defaultTypes);
-			});
+		fillTypeOptions(defaultTypes);
 	}
 
 	function sendToApi(prestataire) {
