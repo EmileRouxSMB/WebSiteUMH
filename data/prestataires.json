@@ -2,6 +2,7 @@
   "typeDePrestationOptions": [
     "Animation",
     "Cadeaux personnalisés",
+    "Coiffure",
     "Création robes de mariées",
     "Décoration",
     "Fleuriste",
@@ -285,7 +286,7 @@
       "photo": "emiliegphoto",
       "dateInscription": "2026-04-20T22:00:00.000Z",
       "dateMAJ": "",
-      "enLigne": false,
+      "enLigne": true,
       "cgAcceptee": true
     },
     {
@@ -313,7 +314,7 @@
       "photo": "ms_.production_",
       "dateInscription": "2026-04-20T22:00:00.000Z",
       "dateMAJ": "",
-      "enLigne": false,
+      "enLigne": true,
       "cgAcceptee": true
     },
     {
@@ -338,7 +339,7 @@
       "photo": "Florence.O_photographe",
       "dateInscription": "2026-04-20T22:00:00.000Z",
       "dateMAJ": "",
-      "enLigne": false,
+      "enLigne": true,
       "cgAcceptee": true
     },
     {
@@ -361,7 +362,30 @@
       "photo": "ateliers.de.charly",
       "dateInscription": "2026-04-20T22:00:00.000Z",
       "dateMAJ": "",
-      "enLigne": false,
+      "enLigne": true,
+      "cgAcceptee": true
+    },
+    {
+      "nomCommercial": "Unmariageheureux test",
+      "numeroSiret": 8523658245362,
+      "numeroDeTel": 673754830,
+      "email": "rachel@unmariageheureux.com",
+      "typeDePrestation": "Coiffure",
+      "departementsCouverts": [
+        "74",
+        "ALL"
+      ],
+      "siteWeb": "https://unmariageheureux.com",
+      "instagram": "Unmariageheureux",
+      "facebook": "",
+      "tiktok": "",
+      "descriptionDesPrestationsProposees": "Formulaire avec manque d’accents",
+      "personnalisationUMH": "",
+      "miseEnAvant": false,
+      "photo": "",
+      "dateInscription": "2026-05-02T22:00:00.000Z",
+      "dateMAJ": "",
+      "enLigne": true,
       "cgAcceptee": true
     }
   ]
