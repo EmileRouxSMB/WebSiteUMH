@@ -9,8 +9,7 @@
     "Papeterie",
     "Patisserie",
     "Photo / Vidéo",
-    "Service / Maitre d'hôtel",
-    "Traiteur"
+    "Service / Maitre d'hôtel"
   ],
   "prestataires": [
     {
@@ -242,30 +241,6 @@
       "cgAcceptee": false
     },
     {
-      "nomCommercial": "TotoFleurs",
-      "numeroSiret": 12345678912345,
-      "numeroDeTel": 680338542,
-      "email": "totoF@gmail.com",
-      "typeDePrestation": "Traiteur",
-      "departementsCouverts": [
-        "45",
-        "78",
-        "22"
-      ],
-      "siteWeb": "",
-      "instagram": "",
-      "facebook": "",
-      "tiktok": "",
-      "descriptionDesPrestationsProposees": "Fleur de Toto",
-      "personnalisationUMH": "",
-      "miseEnAvant": false,
-      "photo": "",
-      "dateInscription": "2026-04-20T22:00:00.000Z",
-      "dateMAJ": "",
-      "enLigne": true,
-      "cgAcceptee": true
-    },
-    {
       "nomCommercial": "EmilieGPhotographe",
       "numeroSiret": 91768442400016,
       "numeroDeTel": 662207118,
@@ -385,7 +360,7 @@
       "photo": "",
       "dateInscription": "2026-05-02T22:00:00.000Z",
       "dateMAJ": "",
-      "enLigne": true,
+      "enLigne": false,
       "cgAcceptee": true
     }
   ]
