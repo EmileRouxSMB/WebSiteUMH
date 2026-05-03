@@ -1,0 +1,61 @@
+name: Sync prestataires JSON
+
+on:
+  schedule:
+    - cron: "0 22,23 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-prestataires-json
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Check Paris midnight window
+        id: paris_time
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "should_run=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          paris_hour=$(TZ=Europe/Paris date +%H)
+          if [ "$paris_hour" = "00" ]; then
+            echo "should_run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "should_run=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Sync static JSON from Google Apps Script
+        if: steps.paris_time.outputs.should_run == 'true'
+        run: node docs/sync-prestataires-json.mjs
+
+      - name: Commit updated JSON
+        if: steps.paris_time.outputs.should_run == 'true'
+        shell: bash
+        run: |
+          if git diff --quiet -- data/prestataires.json; then
+            echo "Aucun changement a commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/prestataires.json
+          git commit -m "chore: sync prestataires json"
+          git push

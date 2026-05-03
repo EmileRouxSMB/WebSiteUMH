@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap");
+
+:root {
+	--heading-font: "Playfair Display", Georgia, "Times New Roman", serif;
+	--body-font: "Acumin Pro Condensed", "Arial Narrow", "Segoe UI", Arial, sans-serif;
+	--ink: #4f2f45;
+	--ink-soft: #6f4560;
+	--line: rgba(136, 85, 119, 0.24);
+	--bg: #f8f2f6;
+	--card: rgba(255, 255, 255, 0.8);
+	--accent: #a1665c;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	background: linear-gradient(160deg, #f7f4f8, #f3ebe5);
+	color: var(--ink);
+	font-family: var(--body-font);
+}
+
+.page {
+	max-width: 1040px;
+	margin: 0 auto;
+	padding: 2rem 1rem 3rem;
+	display: grid;
+	gap: 1rem;
+}
+
+.page-header h1 {
+	margin: 0 0 0.35rem;
+	font-family: var(--heading-font);
+	font-weight: 500;
+}
+
+.page-header p {
+	margin: 0.2rem 0;
+	color: var(--ink-soft);
+}
+
+.page-header a {
+	color: var(--accent);
+	font-family: var(--body-font);
+}
+
+.card {
+	background: var(--card);
+	border: 1px solid var(--line);
+	border-radius: 14px;
+	padding: 1rem;
+	box-shadow: 0 10px 30px rgba(46, 27, 41, 0.08);
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 0.8rem;
+}
+
+label {
+	display: grid;
+	gap: 0.35rem;
+	font-weight: 600;
+	color: var(--ink-soft);
+}
+
+.label-title {
+	display: inline;
+}
+
+.label-title.required-label::after {
+	content: "*";
+	color: #c0392b;
+	font-weight: 700;
+}
+
+.field-note {
+	font-weight: 400;
+	color: #7a5a70;
+	line-height: 1.35;
+}
+
+input,
+textarea,
+select,
+button {
+	font: inherit;
+}
+
+input,
+textarea,
+select {
+	width: 100%;
+	padding: 0.58rem 0.7rem;
+	border: 1px solid var(--line);
+	border-radius: 10px;
+	background: #fff;
+	color: var(--ink);
+}
+
+select[multiple] {
+	min-height: 8.8rem;
+}
+
+textarea {
+	resize: vertical;
+}
+
+.checks {
+	display: flex;
+	gap: 1rem;
+	margin-top: 0.9rem;
+}
+
+.checks label {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.45rem;
+	font-weight: 600;
+}
+
+.actions {
+	margin-top: 1rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.6rem;
+}
+
+button {
+	border: 0;
+	background: var(--ink);
+	color: #fff;
+	padding: 0.6rem 0.95rem;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+button:hover {
+	background: #3f2437;
+}
+
+.hint {
+	margin-top: 0;
+	color: var(--ink-soft);
+}
+
+#json-output {
+	min-height: 300px;
+	font-family: Consolas, "Courier New", monospace;
+	font-size: 0.92rem;
+}
+
+@media (max-width: 780px) {
+	.grid {
+		grid-template-columns: 1fr;
+	}
+}

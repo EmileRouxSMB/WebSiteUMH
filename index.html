@@ -4,7 +4,7 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
+<html lang="fr">
 
 <head>
 	<!-- Google tag (gtag.js) -->
@@ -20,6 +20,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/annuaire.css" />
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" />
 	</noscript>
@@ -38,7 +39,11 @@
 	<!-- End MailerLite Universal -->
 </head>
 
-<body class="is-preload">
+<body class="is-preload single-page-annuaire">
+
+	<div class="umh-promo-bar">
+		<span id="umh-promo-text"></span>
+	</div>
 
 	<!-- Wrapper -->
 	<div id="wrapper">
@@ -50,9 +55,9 @@
 			</div>
 			<div class="content">
 				<div class="inner">
-					<h1> Un mariage heureux </h1>
+					<h1>Un Mariage Heureux</h1>
 					<p>
-						Votre mariage, votre organisation, notre expertise
+						Votre mariage, sans wedding planner, mais jamais seule.
 					</p>
 
 					<p>
@@ -68,8 +73,8 @@
 					</p>
 
 					<ul class="actions stacked">
-						<li><a href="https://un-mariage-heureux.uncoflow.app/offer/acces-premium"
-								class="button primary">Accédez à ma méthode</a></li>
+						<li><a href="#annuaire" class="button primary">Voir nos partenaires</a></li>
+						<li><a href="https://shop.unmariageheureux.com/" class="button">La boutique Mariage</a></li>
 					</ul>
 					<p>
 
@@ -78,7 +83,7 @@
 					<p>
 						Besoin de fiches conseils :					
 					<ul class="actions stacked">
-						<li><a href="https://payhip.com/UnMariageHeureux" class="button primary">Visiter ma boutique</a>
+						<li><a href="https://shop.unmariageheureux.com/" class="button primary">Visiter ma boutique</a>
 						</li>
 					</ul>
 					</p>
@@ -93,11 +98,22 @@
 
 				</div>
 			</div>
+			<section class="home-showcase" aria-label="Sélection mariage">
+				<div class="home-showcase-card">
+					<h2>Nos partenaires mariage</h2>
+					<p>Un annuaire doux et pratique pour trouver les prestataires qui vous accompagneront sereinement.</p>
+					<a href="#annuaire" class="button primary">Découvrir l'annuaire</a>
+				</div>
+			</section>
 			<nav>
 				<ul>
-					<li><a href="#Qui-suis-je">Qui suis-je ?</a></li>
-					<li><a href="#formation">Ma méthode</a></li>
-					<li><a href="#contact">Contact</a></li>
+					<li class="nav-logo-item"><a href="https://shop.unmariageheureux.com/" class="nav-logo-link" aria-label="Un Mariage Heureux"><img src="images/logo.png" alt="" /></a></li>
+					<li><a href="https://shop.unmariageheureux.com/mariage">La boutique Mariage</a></li>
+					<li><a href="https://shop.unmariageheureux.com/blog/le-guide-du-mariage-heureux">Blog</a></li>
+					<li><a href="#annuaire">Nos partenaires</a></li>
+					<li><a href="https://shop.unmariageheureux.com/faq">FAQ</a></li>
+					<li><a href="https://shop.unmariageheureux.com/contact">Contact</a></li>
+					<li><a href="nouveau-prestataire.html">Inscription prestataire</a></li>
 					<!-- <li><a href="#Newsletter">Newsletter</a></li> -->
 					<!--<li><a href="#elements">Elements</a></li>-->
 				</ul>
@@ -280,6 +296,51 @@
 
 			</article>
 
+			<!-- Annuaire -->
+			<article id="annuaire">
+				<h2 class="major">Nos partenaires mariage</h2>
+				<p class="annuaire-intro">
+					Découvrez nos partenaires de confiance pour organiser un mariage doux, fluide et à votre image.
+					Filtrez par type de prestation et par département pour trouver rapidement les meilleurs
+					professionnels du mariage (lieu, traiteur, photographe, coiffure...) près de chez vous.
+				</p>
+
+				<div class="annuaire-shell">
+					<div class="annuaire-filtres">
+						<div>
+							<label for="filtre-type">Type de prestation</label>
+							<select id="filtre-type">
+								<option value="">Tous les types</option>
+							</select>
+						</div>
+						<div>
+							<label for="filtre-departement">Département</label>
+							<input id="filtre-departement" list="liste-departements" placeholder="Ex. : 74, 78, ALL" maxlength="3" />
+							<datalist id="liste-departements"></datalist>
+						</div>
+					</div>
+
+					<div class="annuaire-meta">
+						<p class="annuaire-count" id="annuaire-count">Chargement de nos partenaires...</p>
+						<a href="#" class="button small annuaire-reset" id="annuaire-reset">Réinitialiser les filtres</a>
+					</div>
+
+					<div id="annuaire-results" class="annuaire-results"></div>
+				</div>
+			</article>
+
+			<!-- Fiche Prestataire -->
+			<article id="fiche-prestataire">
+				<h2 class="major">Notre partenaire</h2>
+				<p class="fiche-return">
+					<a href="#annuaire" class="fiche-return-link">← Retour à nos partenaires</a>
+				</p>
+				<div id="fiche-prestataire-content" class="fiche-shell"></div>
+				<p class="fiche-return">
+					<a href="#annuaire" class="fiche-return-link">← Retour à nos partenaires</a>
+				</p>
+			</article>
+
 			<!-- Contact -->
 			<article id="contact">
 				<h2 class="major">Contact</h2>
@@ -352,7 +413,9 @@
 	<script src="assets/js/browser.min.js"></script>
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
+	<script src="assets/js/promo-text.js"></script>
+	<script src="assets/js/umh-config.js"></script>
+	<script src="assets/js/annuaire.js"></script>
 
 </body>
 
