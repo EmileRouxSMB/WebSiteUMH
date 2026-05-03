@@ -44,3 +44,4 @@ Notes:
 - Lors de la sync, si le JSON Google ne fournit pas de champ `photo`, le script conserve le chemin `photo` deja present localement pour ne pas perdre l'association avec `images/partenaires/...`.
 - `assets/js/annuaire.js` et le chargement des types dans `assets/js/form-prestataire.js` lisent uniquement `data/prestataires.json`.
 - Le workflow est planifie en UTC mais ne synchronise effectivement qu'a minuit heure de Paris.
+- Le workflow utilise `actions/checkout@v6` et `actions/setup-node@v6` avec Node.js 24.

@@ -109,7 +109,15 @@ async function main() {
     throw new Error(`Echec de recuperation du JSON (${response.status}).`);
   }
 
-  const data = await response.json();
+  const rawBody = await response.text();
+  let data;
+  try {
+    data = JSON.parse(rawBody);
+  } catch (error) {
+    const excerpt = rawBody.slice(0, 400).replace(/\s+/g, " ").trim();
+    throw new Error(`La reponse Google Apps Script n'est pas un JSON valide. Extrait: ${excerpt}`);
+  }
+
   validatePayload(data);
 
   let current = "";
