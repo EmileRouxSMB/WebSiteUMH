@@ -1,18 +1,15 @@
 {
   "typeDePrestationOptions": [
-    "Bar à illustration",
+    "Animation",
     "Cadeaux personnalisés",
     "Création robes de mariées",
     "Décoration",
     "Fleuriste",
-    "Maitre d'hôtel / Service",
     "Papeterie",
     "Patisserie",
-    "Photo",
-    "Photographe",
-    "Spectacle",
-    "Traiteur",
-    "Vidéaste"
+    "Photo / Vidéo",
+    "Service / Maitre d'hôtel",
+    "Traiteur"
   ],
   "prestataires": [
     {
@@ -89,7 +86,7 @@
       "numeroSiret": 98263595500015,
       "numeroDeTel": "",
       "email": "lesetoilesalignent@gmail.com",
-      "typeDePrestation": "Bar à illustration",
+      "typeDePrestation": "Animation",
       "departementsCouverts": [
         "17"
       ],
@@ -111,7 +108,7 @@
       "numeroSiret": 98843958400018,
       "numeroDeTel": "",
       "email": "cotretclaire@hotmail.com",
-      "typeDePrestation": "Maitre d'hôtel / Service",
+      "typeDePrestation": "Service / Maitre d'hôtel",
       "departementsCouverts": [
         "26.07"
       ],
@@ -133,7 +130,7 @@
       "numeroSiret": "",
       "numeroDeTel": "",
       "email": "",
-      "typeDePrestation": "Photographe",
+      "typeDePrestation": "Photo / Vidéo",
       "departementsCouverts": [
         "66",
         "06"
@@ -200,7 +197,7 @@
       "numeroSiret": 833456320000039,
       "numeroDeTel": "",
       "email": "d.cailloux.photo@gmail.com",
-      "typeDePrestation": "Photographe",
+      "typeDePrestation": "Photo / Vidéo",
       "departementsCouverts": [
         "all"
       ],
@@ -222,7 +219,7 @@
       "numeroSiret": "Intremittent",
       "numeroDeTel": "",
       "email": "contact@magicientonyherman.com",
-      "typeDePrestation": "Spectacle",
+      "typeDePrestation": "Animation",
       "departementsCouverts": [
         "53",
         "72",
@@ -272,7 +269,7 @@
       "numeroSiret": 91768442400016,
       "numeroDeTel": 662207118,
       "email": "emiliegphotographe@gmail.com",
-      "typeDePrestation": "Photo",
+      "typeDePrestation": "Photo / Vidéo",
       "departementsCouverts": [
         "79",
         "17",
@@ -296,7 +293,7 @@
       "numeroSiret": 99100967100017,
       "numeroDeTel": 608171624,
       "email": "hello.msproduction@gmail.com",
-      "typeDePrestation": "Vidéaste",
+      "typeDePrestation": "Photo / Vidéo",
       "departementsCouverts": [
         "4",
         "5",
@@ -324,7 +321,7 @@
       "numeroSiret": 85003633600012,
       "numeroDeTel": 0,
       "email": "florence.olmi@yahoo.fr",
-      "typeDePrestation": "Photo",
+      "typeDePrestation": "Photo / Vidéo",
       "departementsCouverts": [
         "13",
         "83",
