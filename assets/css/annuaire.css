@@ -653,11 +653,16 @@ body.single-page-annuaire #header nav ul li a {
 	height: auto;
 	line-height: 1.35;
 	padding: 0;
-	color: #8a5175;
+	color: #603952 !important;
 	font-size: 0.95rem;
 	font-weight: 600;
 	letter-spacing: 0;
 	border-bottom: 0;
+}
+
+body.single-page-annuaire #header nav ul li a:hover,
+body.single-page-annuaire #header nav ul li a:focus {
+	color: #603952 !important;
 }
 
 body.single-page-annuaire #header nav ul li.nav-logo-item {

@@ -15,7 +15,7 @@
 
 	const maxPhotoSize = 5 * 1024 * 1024;
 	const acceptedPhotoTypes = ["image/jpeg", "image/png", "image/webp"];
-	const defaultTypes = ["Lieu", "Photographe", "Traiteur", "Coiffure"];
+	const defaultTypes = ["Lieu", "Photo / Vidéo", "Traiteur", "Coiffure", "Maquillage", "Animation", "Musique / DJ", "Décoration", "Officiant de cérémonie", "Service / Maitre d'hôtel", "Création robes de mariées", "Cadeaux personnalisés", "Papeterie","Fleuriste", "Patisserie", "Autre"];
 
 	function getTodayDate() {
 		return new Date().toISOString().slice(0, 10);
