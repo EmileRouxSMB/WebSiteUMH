@@ -1,0 +1,882 @@
+#annuaire .annuaire-intro {
+	color: rgba(96, 57, 82, 0.82);
+	margin-bottom: 2rem;
+}
+
+body.single-page-annuaire,
+body.single-page-annuaire input,
+body.single-page-annuaire select,
+body.single-page-annuaire textarea,
+body.single-page-annuaire a {
+	font-family: "Acumin Pro Condensed", "Arial Narrow", 'glacial-indifference-webfont', "Segoe UI", Arial, sans-serif;
+}
+
+body.single-page-annuaire h1,
+body.single-page-annuaire h2,
+body.single-page-annuaire h3,
+body.single-page-annuaire h4,
+body.single-page-annuaire h5,
+body.single-page-annuaire h6 {
+	font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+}
+
+#annuaire .annuaire-shell {
+	display: grid;
+	gap: 1.5rem;
+}
+
+#annuaire .annuaire-filtres {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 1rem;
+	padding: 1.25rem;
+	border: 1px solid rgba(255, 255, 255, 0.15);
+	border-radius: 1rem;
+	background: linear-gradient(135deg, rgba(193, 141, 112, 0.18), rgba(125, 96, 140, 0.1));
+	backdrop-filter: blur(6px);
+}
+
+#annuaire .annuaire-filtres label {
+	display: block;
+	margin-bottom: 0.5rem;
+	font-size: 0.9rem;
+	font-weight: 700;
+	letter-spacing: 0.12rem;
+	text-transform: uppercase;
+	color: #885577;
+}
+
+#annuaire .annuaire-filtres select,
+#annuaire .annuaire-filtres input {
+	background: rgba(255, 255, 255, 0.18);
+	border: 1px solid rgba(136, 85, 119, 0.22);
+	border-radius: 0.75rem;
+	color: #603952;
+	padding: 0 1rem;
+}
+
+#annuaire .annuaire-meta {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+
+#annuaire .annuaire-count {
+	margin: 0;
+	font-size: 0.95rem;
+	color: rgba(96, 57, 82, 0.74);
+}
+
+#annuaire .annuaire-reset {
+	border-bottom: 0;
+}
+
+#annuaire .annuaire-results {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: 1.25rem;
+}
+
+#annuaire .annuaire-card {
+	display: grid;
+	gap: 1rem;
+	padding: 1.25rem;
+	border-radius: 1.25rem;
+	border: 1px solid rgba(255, 255, 255, 0.14);
+	background:
+		radial-gradient(circle at top right, rgba(223, 188, 162, 0.18), transparent 35%),
+		linear-gradient(180deg, rgba(255, 255, 255, 0.085), rgba(255, 255, 255, 0.03));
+	box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+}
+
+#annuaire .annuaire-card.is-featured {
+	border: 2px solid rgba(161, 102, 92, 0.6);
+	box-shadow: 0 20px 44px rgba(120, 76, 97, 0.22);
+	background:
+		radial-gradient(circle at top right, rgba(223, 188, 162, 0.28), transparent 38%),
+		linear-gradient(180deg, rgba(255, 250, 246, 0.16), rgba(255, 255, 255, 0.04));
+}
+
+#annuaire .annuaire-card-header {
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+	align-items: flex-start;
+}
+
+#annuaire .annuaire-card h3 {
+	margin: 0;
+	font-size: 1.2rem;
+	letter-spacing: 0.08rem;
+	color: #885577;
+}
+
+#annuaire .annuaire-card .prestataire-type {
+	margin: 0.35rem 0 0;
+	color: #a1665c;
+	font-weight: 600;
+}
+
+#annuaire .annuaire-name-link {
+	border-bottom: 0;
+	color: inherit;
+}
+
+#annuaire .annuaire-name-link:hover {
+	text-decoration: underline;
+}
+
+#annuaire .annuaire-photo-link {
+	display: block;
+	width: 78px;
+	height: 78px;
+	border-bottom: 0;
+	border-radius: 8px;
+	flex-shrink: 0;
+	overflow: hidden;
+}
+
+#annuaire .annuaire-photo-link:hover .annuaire-photo {
+	transform: scale(1.04);
+}
+
+#annuaire .annuaire-photo,
+#annuaire .annuaire-photo-placeholder {
+	width: 78px;
+	height: 78px;
+	border-radius: 1rem;
+	flex-shrink: 0;
+}
+
+#annuaire .annuaire-photo {
+	object-fit: cover;
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	background: rgba(255, 255, 255, 0.05);
+	transition: transform 0.2s ease;
+}
+
+#annuaire .annuaire-photo-placeholder {
+	display: grid;
+	place-items: center;
+	font-size: 1.4rem;
+	font-weight: 700;
+	color: #fff;
+	background: linear-gradient(135deg, #c58c66, #8b657e);
+	border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+#annuaire .annuaire-badges,
+#annuaire .annuaire-socials {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+#annuaire .annuaire-badge,
+#annuaire .annuaire-social {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35rem;
+	padding: 0.32rem 0.7rem;
+	border-radius: 999px;
+	border: 1px solid rgba(255, 255, 255, 0.15);
+	background: rgba(255, 255, 255, 0.06);
+	font-size: 0.78rem;
+	color: #6f4560;
+	text-transform: uppercase;
+	letter-spacing: 0.06rem;
+}
+
+#annuaire .annuaire-social {
+	text-transform: none;
+	border-bottom: 0;
+}
+
+#annuaire .annuaire-social-icon,
+#fiche-prestataire .annuaire-social-icon {
+	padding: 0.35rem;
+}
+
+#annuaire .annuaire-social-image,
+#fiche-prestataire .annuaire-social-image {
+	width: 24px;
+	height: 24px;
+	display: block;
+}
+
+#annuaire .annuaire-description,
+#annuaire .annuaire-umh {
+	margin: 0;
+	color: rgba(96, 57, 82, 0.84);
+}
+
+#annuaire .annuaire-umh {
+	padding-left: 1rem;
+	border-left: 2px solid rgba(161, 102, 92, 0.4);
+	font-style: italic;
+}
+
+#annuaire .annuaire-details {
+	display: grid;
+	gap: 0.55rem;
+}
+
+#annuaire .annuaire-detail {
+	display: flex;
+	gap: 0.65rem;
+	align-items: baseline;
+	flex-wrap: wrap;
+	color: rgba(96, 57, 82, 0.82);
+}
+
+#annuaire .annuaire-detail strong {
+	min-width: 105px;
+	color: #885577;
+}
+
+#annuaire .annuaire-empty {
+	padding: 1.25rem;
+	border-radius: 1rem;
+	border: 1px dashed rgba(136, 85, 119, 0.22);
+	background: rgba(255, 255, 255, 0.08);
+	color: rgba(96, 57, 82, 0.8);
+	text-align: center;
+}
+
+#fiche-prestataire .fiche-shell {
+	display: grid;
+	grid-template-columns: minmax(300px, 0.96fr) minmax(320px, 1.04fr);
+	align-items: center;
+	gap: 0;
+	margin-top: 2rem;
+	padding: 0;
+	border-radius: 10px;
+	border: 0;
+	background: transparent;
+	box-shadow: none;
+	overflow: visible;
+}
+
+#main article#fiche-prestataire {
+	background: transparent;
+	box-shadow: none;
+}
+
+#fiche-prestataire h3 {
+	margin: 0 0 1.4rem;
+	color: #8a5175;
+	font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+	font-size: clamp(2.1rem, 4vw, 3.2rem);
+	font-weight: 400;
+	letter-spacing: 0;
+	line-height: 1.12;
+}
+
+#fiche-prestataire .fiche-media {
+	position: relative;
+	z-index: 1;
+	align-self: stretch;
+	min-height: 35rem;
+	background: transparent;
+	transform: translateY(-3%);
+	box-shadow: 0 22px 48px rgba(96, 57, 82, 0.12);
+	overflow: hidden;
+}
+
+#fiche-prestataire .fiche-type {
+	margin: 0 0 0.8rem;
+	color: rgba(96, 57, 82, 0.7);
+	font-weight: 600;
+	letter-spacing: 0;
+}
+
+#fiche-prestataire .fiche-content {
+	position: relative;
+	z-index: 2;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 35rem;
+	padding: clamp(2rem, 4.6vw, 4.3rem);
+	background:
+		linear-gradient(135deg, rgba(255, 248, 240, 0.12), rgba(255, 248, 240, 0)),
+		#d7bad4;
+	color: #7f4d71;
+	transform: translate(-4%, 3%);
+	box-shadow: 0 28px 70px rgba(96, 57, 82, 0.22);
+}
+
+#fiche-prestataire .fiche-image {
+	display: block;
+	width: 100%;
+	height: 100%;
+	min-height: 35rem;
+	object-fit: cover;
+	border-radius: 0;
+	border: 0;
+	box-shadow: none;
+}
+
+#fiche-prestataire .fiche-lead,
+#fiche-prestataire .fiche-description {
+	margin: 0 0 1.4rem;
+	color: #7f4d71;
+	line-height: 1.72;
+}
+
+#fiche-prestataire .fiche-lead {
+	font-weight: 700;
+}
+
+#fiche-prestataire .fiche-details {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 0.55rem;
+	margin: 0.4rem 0 1.4rem;
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	background: transparent;
+}
+
+#fiche-prestataire .fiche-detail {
+	margin: 0;
+	color: #7f4d71;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.25rem 0.55rem;
+	align-items: baseline;
+}
+
+#fiche-prestataire .fiche-detail strong {
+	color: #603952;
+	min-width: 6.5rem;
+	font-weight: 700;
+}
+
+#fiche-prestataire .fiche-detail a {
+	word-break: break-word;
+}
+
+#fiche-prestataire .fiche-actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.8rem 1rem;
+	margin-top: 0.35rem;
+}
+
+#fiche-prestataire .fiche-site-link {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 2.75rem;
+	padding: 0.55rem 1.5rem;
+	border-radius: 4px;
+	background: #8a5175;
+	border: 0;
+	font-weight: 600;
+	text-decoration: none;
+	color: #ffffff;
+	box-shadow: none;
+}
+
+#fiche-prestataire .fiche-site-link:hover {
+	transform: translateY(-1px);
+	transition: transform 0.2s ease;
+}
+
+#fiche-prestataire .fiche-socials {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.6rem;
+	margin: 0;
+}
+
+#fiche-prestataire .fiche-return {
+	position: relative;
+	z-index: 5;
+	margin: 0.4rem 0 1.75rem;
+}
+
+#fiche-prestataire .fiche-return-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35rem;
+	border-bottom: 0;
+	font-size: 0.9rem;
+	color: rgba(125, 63, 99, 0.92);
+	letter-spacing: 0.02rem;
+}
+
+#fiche-prestataire .fiche-return-link:hover {
+	text-decoration: underline;
+}
+
+@media screen and (max-width: 736px) {
+	#annuaire .annuaire-filtres {
+		grid-template-columns: 1fr;
+	}
+
+	#annuaire .annuaire-card-header {
+		flex-direction: column-reverse;
+	}
+
+	#fiche-prestataire .fiche-header {
+		flex-direction: column-reverse;
+		align-items: flex-start;
+	}
+
+	#fiche-prestataire .fiche-image {
+		width: 100%;
+		max-width: 320px;
+		height: auto;
+		aspect-ratio: 4 / 3;
+	}
+
+	#fiche-prestataire .fiche-details {
+		grid-template-columns: 1fr;
+	}
+
+	#fiche-prestataire .fiche-shell {
+		padding: 1rem;
+	}
+}
+
+/* Harmonisation avec la boutique Payhip */
+
+#annuaire h2.major,
+#fiche-prestataire h2.major {
+	font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+	font-weight: 400;
+	letter-spacing: 0;
+	border-bottom-color: rgba(136, 85, 119, 0.35);
+}
+
+#annuaire .annuaire-intro {
+	color: rgba(96, 57, 82, 0.78);
+	font-size: 1.02rem;
+	line-height: 1.7;
+}
+
+#annuaire .annuaire-filtres,
+#fiche-prestataire .fiche-details {
+	border-color: rgba(136, 85, 119, 0.18);
+	background: rgba(255, 255, 255, 0.52);
+	box-shadow: 0 14px 34px rgba(96, 57, 82, 0.08);
+	backdrop-filter: none;
+}
+
+#annuaire .annuaire-filtres label {
+	letter-spacing: 0;
+	text-transform: none;
+}
+
+#annuaire .annuaire-filtres select,
+#annuaire .annuaire-filtres input {
+	background: #fffdf9;
+	border-color: rgba(136, 85, 119, 0.28);
+	border-radius: 4px;
+}
+
+#annuaire .annuaire-card {
+	border-radius: 8px;
+	border-color: rgba(136, 85, 119, 0.16);
+	background: #fffdf9;
+	box-shadow: 0 16px 36px rgba(96, 57, 82, 0.1);
+}
+
+#annuaire .annuaire-card.is-featured {
+	border-color: rgba(199, 155, 88, 0.72);
+	background:
+		linear-gradient(180deg, rgba(255, 253, 249, 0.98), rgba(255, 248, 240, 0.98));
+	box-shadow: 0 18px 42px rgba(96, 57, 82, 0.13);
+}
+
+#annuaire .annuaire-card h3,
+#fiche-prestataire h3 {
+	font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+	font-weight: 400;
+	letter-spacing: 0;
+	color: #8a5175;
+}
+
+#annuaire .annuaire-photo,
+#annuaire .annuaire-photo-placeholder {
+	border-radius: 8px;
+}
+
+#annuaire .annuaire-badge,
+#annuaire .annuaire-social {
+	border-radius: 4px;
+	background: rgba(241, 210, 205, 0.42);
+	border-color: rgba(136, 85, 119, 0.16);
+	color: #603952;
+	letter-spacing: 0;
+	text-transform: none;
+}
+
+#fiche-prestataire .fiche-shell {
+	background: transparent;
+	border: 0;
+	box-shadow: none;
+}
+
+#fiche-prestataire .fiche-details {
+	background: transparent;
+	border: 0;
+	box-shadow: none;
+}
+
+#fiche-prestataire .fiche-image {
+	border-radius: 0;
+}
+
+#fiche-prestataire .fiche-site-link {
+	background: #8a5175;
+	color: #ffffff;
+	border-radius: 4px;
+}
+
+#fiche-prestataire .annuaire-social {
+	background: rgba(255, 248, 240, 0.34);
+	border-color: rgba(96, 57, 82, 0.15);
+	color: #603952;
+}
+
+@media screen and (max-width: 900px) {
+	#fiche-prestataire .fiche-shell {
+		grid-template-columns: 1fr;
+		align-items: stretch;
+	}
+
+	#fiche-prestataire .fiche-media,
+	#fiche-prestataire .fiche-content,
+	#fiche-prestataire .fiche-image {
+		min-height: 24rem;
+	}
+
+	#fiche-prestataire .fiche-media,
+	#fiche-prestataire .fiche-content {
+		transform: none;
+	}
+
+	#fiche-prestataire .fiche-content {
+		box-shadow: 0 20px 48px rgba(96, 57, 82, 0.16);
+	}
+}
+
+@media screen and (max-width: 736px) {
+	#fiche-prestataire .fiche-shell {
+		padding: 0;
+	}
+
+	#fiche-prestataire .fiche-image {
+		max-width: none;
+		height: 100%;
+		aspect-ratio: auto;
+	}
+
+	#fiche-prestataire .fiche-content {
+		min-height: auto;
+		padding: 2rem 1.35rem;
+	}
+}
+
+/* Page annuaire directe */
+
+body.single-page-annuaire {
+	background: #fff8f0;
+	overflow-x: hidden;
+}
+
+body.single-page-annuaire * {
+	max-width: 100%;
+}
+
+body.single-page-annuaire #bg {
+	display: none;
+}
+
+body.single-page-annuaire #wrapper {
+	display: block;
+	min-height: 100vh;
+	padding: 0;
+	background: #fff8f0;
+}
+
+body.single-page-annuaire #header {
+	display: block;
+	min-height: auto;
+	width: 100%;
+	opacity: 1;
+	transform: none;
+	filter: none;
+}
+
+body.single-page-annuaire #header .logo,
+body.single-page-annuaire #header .content,
+body.single-page-annuaire .home-showcase {
+	display: none;
+}
+
+body.single-page-annuaire #header nav {
+	display: block;
+	width: 100%;
+	margin: 0;
+	background: #fff8f0;
+	border-bottom: 1px solid rgba(136, 85, 119, 0.14);
+}
+
+body.single-page-annuaire #header nav ul {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: clamp(0.85rem, 2vw, 1.35rem);
+	width: min(100%, 1180px);
+	margin: 0 auto;
+	padding: 1.25rem 2rem;
+	border: 0;
+	list-style: none;
+}
+
+body.single-page-annuaire #header nav ul li {
+	border: 0;
+	padding: 0;
+}
+
+body.single-page-annuaire #header nav ul li a {
+	min-width: 0;
+	width: auto;
+	height: auto;
+	line-height: 1.35;
+	padding: 0;
+	color: #8a5175;
+	font-size: 0.95rem;
+	font-weight: 600;
+	letter-spacing: 0;
+	border-bottom: 0;
+}
+
+body.single-page-annuaire #header nav ul li.nav-logo-item {
+	margin-right: auto;
+}
+
+body.single-page-annuaire #header nav ul li a.nav-logo-link {
+	display: inline-flex;
+	align-items: center;
+	padding: 0;
+	border-bottom: 0;
+}
+
+body.single-page-annuaire #header nav ul li a.nav-logo-link img {
+	display: block;
+	width: 3rem;
+	height: 3rem;
+	object-fit: contain;
+}
+
+body.single-page-annuaire #main {
+	display: block !important;
+	width: 100%;
+	max-width: none;
+	padding: clamp(1.25rem, 3vw, 2.5rem) 1.5rem clamp(2rem, 5vw, 4rem);
+	background: #fff8f0;
+}
+
+body.single-page-annuaire #main article {
+	display: none;
+	position: static;
+	width: min(100%, 1180px);
+	max-width: 100%;
+	margin: 0 auto;
+	padding: clamp(1.5rem, 4vw, 3rem) clamp(2rem, 5vw, 4rem) clamp(2rem, 5vw, 4rem);
+	background: #fff8f0;
+	border-radius: 0;
+	box-shadow: none;
+	opacity: 1;
+	transform: none;
+}
+
+body.single-page-annuaire #main article#annuaire {
+	display: block;
+}
+
+body.single-page-annuaire.is-fiche-prestataire-visible #main article#annuaire {
+	display: none;
+}
+
+body.single-page-annuaire.is-fiche-prestataire-visible #main article#fiche-prestataire {
+	display: block;
+	width: min(100%, 1180px);
+	padding-left: 0;
+	padding-right: 0;
+}
+
+body.single-page-annuaire #main article[hidden] {
+	display: none !important;
+}
+
+body.single-page-annuaire #main article .close {
+	display: none;
+}
+
+body.single-page-annuaire #annuaire h2.major {
+	font-size: clamp(2rem, 4vw, 3rem);
+	margin-bottom: 2.25rem;
+}
+
+body.single-page-annuaire #annuaire .annuaire-intro {
+	max-width: 1120px;
+	margin-bottom: 2.75rem;
+	font-size: 1.08rem;
+	line-height: 1.9;
+}
+
+body.single-page-annuaire #annuaire .annuaire-filtres {
+	padding: 1.6rem;
+	border-radius: 12px;
+	background: rgba(255, 253, 249, 0.78);
+	box-shadow: 0 18px 48px rgba(96, 57, 82, 0.08);
+}
+
+body.single-page-annuaire #footer {
+	margin: 0;
+	background: #fff8f0;
+}
+
+@media screen and (max-width: 900px) {
+	html,
+	body {
+		width: 100%;
+		max-width: 100%;
+		overflow-x: hidden;
+	}
+
+	.umh-promo-bar {
+		padding: 0.55rem 0.85rem;
+		font-size: 0.74rem;
+		line-height: 1.35;
+		white-space: normal;
+	}
+
+	body.single-page-annuaire #header nav ul {
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 0.8rem 1rem;
+		padding: 0.95rem 0.85rem;
+	}
+
+	body.single-page-annuaire #header nav ul li.nav-logo-item {
+		width: 100%;
+		margin-right: 0;
+	}
+
+	body.single-page-annuaire #header nav ul li a.nav-logo-link {
+		justify-content: center;
+	}
+
+	body.single-page-annuaire #main {
+		width: 100vw;
+		padding: 1.2rem 0.85rem 2rem;
+	}
+
+	body.single-page-annuaire #main article {
+		width: calc(100vw - 1.7rem);
+		max-width: calc(100vw - 1.7rem);
+		padding: 1.8rem 0 2.2rem;
+	}
+
+	body.single-page-annuaire #annuaire h2.major {
+		width: 100% !important;
+		font-size: clamp(1.9rem, 9vw, 2.45rem);
+		max-width: 100%;
+		overflow-wrap: normal;
+	}
+
+	body.single-page-annuaire #annuaire .annuaire-intro {
+		width: 100%;
+		max-width: 100%;
+		font-size: 1rem;
+		line-height: 1.85;
+		overflow-wrap: break-word;
+	}
+
+	body.single-page-annuaire #annuaire .annuaire-filtres {
+		width: 100%;
+		padding: 1.2rem;
+		grid-template-columns: 1fr;
+	}
+
+	body.single-page-annuaire #annuaire .annuaire-meta {
+		align-items: flex-start;
+		flex-direction: column;
+	}
+
+	body.single-page-annuaire #annuaire .annuaire-reset {
+		width: 100%;
+		max-width: 18rem;
+	}
+
+	body.single-page-annuaire #annuaire .annuaire-results {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media screen and (min-width: 737px) and (max-width: 900px) {
+	body.single-page-annuaire #annuaire .annuaire-results {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.umh-promo-bar {
+		font-size: 0.62rem;
+		padding: 0.48rem 0.65rem;
+	}
+
+	body.single-page-annuaire #header nav ul li a {
+		font-size: 0.78rem;
+	}
+
+	body.single-page-annuaire #main {
+		padding-left: 0.6rem;
+		padding-right: 0.6rem;
+	}
+
+	body.single-page-annuaire #main article {
+		width: calc(100vw - 1.2rem);
+		max-width: calc(100vw - 1.2rem);
+	}
+
+	body.single-page-annuaire #annuaire h2.major {
+		font-size: 1.72rem;
+		line-height: 1.2;
+	}
+
+	body.single-page-annuaire #annuaire .annuaire-intro {
+		font-size: 0.92rem;
+		line-height: 1.75;
+		width: min(100%, 34ch);
+		max-width: 34ch;
+	}
+
+	body.single-page-annuaire #annuaire .annuaire-filtres {
+		padding: 1rem;
+		width: calc(100vw - 1.2rem);
+		max-width: calc(100vw - 1.2rem);
+	}
+
+	body.single-page-annuaire #annuaire .annuaire-filtres select,
+	body.single-page-annuaire #annuaire .annuaire-filtres input {
+		width: 100%;
+		max-width: 100%;
+	}
+
+	body.single-page-annuaire #annuaire .annuaire-card {
+		width: calc(100vw - 1.2rem);
+		max-width: calc(100vw - 1.2rem);
+	}
+}
