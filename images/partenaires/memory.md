@@ -10,5 +10,5 @@ Visuels actifs des partenaires affiches sur le site.
 
 ## Vigilance
 
-- Garder une convention de nommage stable entre image et entree correspondante dans `data/prestataires.json`.
+- Nommer chaque image a partir du handle Instagram du prestataire, sans le `@` ni l'URL, par exemple `moncompte.jpg`.
 - Toute migration depuis `Partenariats_old/` doit etre tracee ici.

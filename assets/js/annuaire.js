@@ -124,10 +124,6 @@
 	}
 
 	function getPhotoCandidates(prestataire) {
-		if (prestataire.photo) {
-			return [String(prestataire.photo).trim()].filter(Boolean);
-		}
-
 		const handle = getInstagramHandle(prestataire.instagram);
 		if (!handle) {
 			return [];
