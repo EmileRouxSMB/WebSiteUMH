@@ -352,29 +352,6 @@
       "enLigne": true,
       "cgAcceptee": true,
       "photoDepotUrl": ""
-    },
-    {
-      "nomCommercial": "Test",
-      "numeroSiret": 98745632147856,
-      "numeroDeTel": "",
-      "email": "milou.roux@gmail.com",
-      "typeDePrestation": "Photo / Vidéo",
-      "departementsCouverts": [
-        "89"
-      ],
-      "siteWeb": "",
-      "instagram": "@Test1",
-      "facebook": "",
-      "tiktok": "",
-      "descriptionDesPrestationsProposees": "Test workflow image",
-      "personnalisationUMH": "",
-      "miseEnAvant": false,
-      "photo": "",
-      "dateInscription": "2026-05-03T22:00:00.000Z",
-      "dateMAJ": "",
-      "enLigne": true,
-      "cgAcceptee": true,
-      "photoDepotUrl": "https://drive.google.com/file/d/1tWSCWHaE8r5hZ-bFCi1n5D2XuUt6r8pk/view?usp=drivesdk"
     }
   ]
 }
