@@ -8,6 +8,8 @@
 	const detailContainer = document.getElementById("fiche-prestataire-content");
 	const annuaireArticle = document.getElementById("annuaire");
 	const ficheArticle = document.getElementById("fiche-prestataire");
+	const payhipConfig = window.UMH_PAYHIP_PRODUCTS || { products: [] };
+	const payhipScriptUrl = String(payhipConfig.scriptUrl || "https://payhip.com/embed-page.js?v=24u68985").trim();
 
 	if (!typeSelect || !departementInput || !departementList || !resultsContainer || !countElement || !resetButton || !detailContainer) {
 		return;
@@ -226,6 +228,54 @@
 		});
 	}
 
+	function getRandomPayhipProduct() {
+		const products = Array.isArray(payhipConfig.products) ? payhipConfig.products : [];
+		const enabledProducts = products.filter(function (product) {
+			return product && product.enabled !== false && String(product.key || "").trim();
+		});
+
+		if (!enabledProducts.length) {
+			return null;
+		}
+
+		return enabledProducts[Math.floor(Math.random() * enabledProducts.length)];
+	}
+
+	function renderPayhipEmbed() {
+		const product = getRandomPayhipProduct();
+		if (!product) {
+			return "";
+		}
+
+		const key = escapeHtml(String(product.key || "").trim());
+		const title = escapeHtml(product.title || "Ressource recommandee");
+
+		return "" +
+			'<section class="fiche-payhip" aria-label="Produit recommande">' +
+			'<p class="fiche-payhip-eyebrow">Pour aller plus loin</p>' +
+			'<h4 class="fiche-payhip-title">' + title + "</h4>" +
+			'<div class="payhip-embed-page" data-key="' + key + '">...</div>' +
+			"</section>";
+	}
+
+	function refreshPayhipEmbed() {
+		const embed = detailContainer.querySelector(".payhip-embed-page");
+		if (!embed || !payhipScriptUrl) {
+			return;
+		}
+
+		const existingScript = document.querySelector('script[data-umh-payhip-script="true"]');
+		if (existingScript && existingScript.parentNode) {
+			existingScript.parentNode.removeChild(existingScript);
+		}
+
+		const script = document.createElement("script");
+		script.src = payhipScriptUrl;
+		script.async = true;
+		script.setAttribute("data-umh-payhip-script", "true");
+		document.body.appendChild(script);
+	}
+
 	function renderPrestataireDetail(prestataire) {
 		const types = getTypes(prestataire);
 		const typeLabel = types.join(" / ");
@@ -257,6 +307,7 @@
 			(websiteDetail ? websiteDetail : "") +
 			(socials ? '<div class="fiche-socials">' + socials + "</div>" : "") +
 			"</div>" +
+			renderPayhipEmbed() +
 			"</div>";
 	}
 
@@ -274,6 +325,7 @@
 	function showPrestataire(prestataire) {
 		currentPrestataireId = prestataire._uid;
 		renderPrestataireDetail(prestataire);
+		refreshPayhipEmbed();
 		document.body.classList.add("is-fiche-prestataire-visible");
 		if (annuaireArticle) {
 			annuaireArticle.hidden = true;

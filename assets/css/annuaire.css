@@ -415,6 +415,32 @@ body.single-page-annuaire h6 {
 	text-decoration: underline;
 }
 
+#fiche-prestataire .fiche-payhip {
+	display: grid;
+	gap: 0.8rem;
+	margin-top: 1.6rem;
+	padding-top: 1.2rem;
+	border-top: 1px solid rgba(96, 57, 82, 0.16);
+}
+
+#fiche-prestataire .fiche-payhip-eyebrow {
+	margin: 0;
+	color: rgba(96, 57, 82, 0.7);
+	font-size: 0.82rem;
+	font-weight: 700;
+	letter-spacing: 0.08rem;
+	text-transform: uppercase;
+}
+
+#fiche-prestataire .fiche-payhip-title {
+	margin: 0;
+	color: #603952;
+	font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+	font-size: 1.2rem;
+	font-weight: 400;
+	letter-spacing: 0;
+}
+
 @media screen and (max-width: 736px) {
 	#annuaire .annuaire-filtres {
 		grid-template-columns: 1fr;
