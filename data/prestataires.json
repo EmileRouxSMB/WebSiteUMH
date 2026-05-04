@@ -1,6 +1,7 @@
 {
   "typeDePrestationOptions": [
     "Animation",
+    "Autre",
     "Cadeaux personnalisés",
     "Création robes de mariées",
     "Décoration",
@@ -43,10 +44,10 @@
       "email": "contact@jmrevedeprestige.fr",
       "typeDePrestation": "Décoration",
       "departementsCouverts": [
-        "\"22\"",
-        "\"29\"",
-        "\"56\"",
-        "\"35\""
+        "22",
+        "29",
+        "56",
+        "35"
       ],
       "siteWeb": "mrevedeprestige.fr",
       "instagram": "@jm_revedeprestige",
@@ -232,11 +233,11 @@
       "email": "contact@magicientonyherman.com",
       "typeDePrestation": "Animation",
       "departementsCouverts": [
-        "\"53\"",
-        "\"72\"",
-        "\"44\"",
-        "\"49\"",
-        "\"85\""
+        "53",
+        "72",
+        "44",
+        "49",
+        "85"
       ],
       "siteWeb": "www.magicientonyherman.com",
       "instagram": "@Tony_Herman_magie",
@@ -284,9 +285,9 @@
       "email": "hello.msproduction@gmail.com",
       "typeDePrestation": "Photo / Vidéo",
       "departementsCouverts": [
-        "4",
-        "5",
-        "6",
+        "04",
+        "05",
+        "06",
         "13",
         "83",
         "84",
@@ -515,6 +516,58 @@
       "enLigne": true,
       "cgAcceptee": false,
       "photoDepotUrl": ""
+    },
+    {
+      "nomCommercial": "Elo drink",
+      "numeroSiret": 84268092800020,
+      "numeroDeTel": 664278663,
+      "email": "elo.drink@icloud.com",
+      "typeDePrestation": [
+        "Animation",
+        "Autre"
+      ],
+      "departementsCouverts": [
+        "08",
+        "02",
+        "51"
+      ],
+      "siteWeb": "",
+      "instagram": "https://www.instagram.com/elo.drink?igsh=enBwMnc1Y2V1dGkw&utm_source=qr",
+      "facebook": "",
+      "tiktok": "",
+      "descriptionDesPrestationsProposees": "Le bar qui fait battre le cœur de votre mariage 🤍\n\nEt si vos invités se souvenaient de votre mariage… aussi pour ses cocktails ? 🍸✨\n\nAvec Elo Drink, offrez une expérience unique grâce à notre bar à cocktails installé dans une caravane vintage, pleine de charme et d’élégance.\nUn véritable décor à part entière, qui sublime votre réception et crée des moments de partage inoubliables.\n\n✨ Cocktails raffinés\n✨ Ambiance chic, bohème ou festive\n✨ Prestation clé en main (verrerie, service, installation)\n✨ Un concept original qui fait toute la différence\n\n💍 Vin d’honneur, soirée ou lendemain de mariage :\nnous nous adaptons à vos envies pour un moment à votre image.\n\n📍 Champagne-Ardenne & alentours (55, 51, 08)\n\n📩 Contactez-nous pour réserver votre date\n📞 06 64 27 86 63\n📧 elo.drink@icloud.com",
+      "personnalisationUMH": "",
+      "miseEnAvant": false,
+      "photo": "",
+      "dateInscription": "2026-05-03T22:00:00.000Z",
+      "dateMAJ": "",
+      "enLigne": false,
+      "cgAcceptee": true,
+      "photoDepotUrl": "https://drive.google.com/file/d/1pmojlkwYr929giReEdc0xUMZ5A7cM4Z_/view?usp=drivesdk"
+    },
+    {
+      "nomCommercial": "Fcevenementielle",
+      "numeroSiret": 93471485800016,
+      "numeroDeTel": 614356266,
+      "email": "fcevenements85@gmail.com",
+      "typeDePrestation": "Décoration",
+      "departementsCouverts": [
+        "85",
+        "44"
+      ],
+      "siteWeb": "",
+      "instagram": "https://www.instagram.com/fcevenementielle",
+      "facebook": "",
+      "tiktok": "",
+      "descriptionDesPrestationsProposees": "Bonjour. Je propose des décorations créer et élaborer par moi même. Du mariage a l'anniversaire en passant pas les naissances, je m'ouvre a toute sorte d'événements. \nJe réalise également des cadeaux personnalisés comme les dragées, aimants, bouteilles cadeaux , box pour les enfants.",
+      "personnalisationUMH": "",
+      "miseEnAvant": false,
+      "photo": "",
+      "dateInscription": "2026-05-03T22:00:00.000Z",
+      "dateMAJ": "",
+      "enLigne": false,
+      "cgAcceptee": true,
+      "photoDepotUrl": "https://drive.google.com/file/d/1irvxfOMFeqiXzSzb8Y3ohwWqAF616R2C/view?usp=drivesdk"
     }
   ]
 }
