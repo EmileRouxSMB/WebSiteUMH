@@ -163,7 +163,7 @@
       "email": "",
       "typeDePrestation": "Cadeaux personnalisés",
       "departementsCouverts": [
-        "\"42\""
+        "42"
       ],
       "siteWeb": "",
       "instagram": "@maedeco_loire",
@@ -186,7 +186,7 @@
       "email": "isafeedesfleurs@gmail.com",
       "typeDePrestation": "Fleuriste",
       "departementsCouverts": [
-        "\"974\""
+        "974"
       ],
       "siteWeb": "",
       "instagram": "@isa_fee_des_fleurs",
@@ -232,11 +232,11 @@
       "email": "contact@magicientonyherman.com",
       "typeDePrestation": "Animation",
       "departementsCouverts": [
-        "53",
-        "72",
-        "44",
-        "49",
-        "85"
+        "\"53\"",
+        "\"72\"",
+        "\"44\"",
+        "\"49\"",
+        "\"85\""
       ],
       "siteWeb": "www.magicientonyherman.com",
       "instagram": "@Tony_Herman_magie",
