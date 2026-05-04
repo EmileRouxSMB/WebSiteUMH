@@ -176,6 +176,10 @@
 			return '<a href="' + escapeHtml(normalizedUrl) + '" target="_blank" rel="noopener" class="annuaire-social annuaire-social-icon annuaire-outbound" data-presta-id="' + prestaId + '" data-link-label="' + linkLabel + '" data-source-area="' + area + '" aria-label="Instagram"><img src="images/instagram.png" alt="Instagram" class="annuaire-social-image"></a>';
 		}
 
+		if (labelKey === "facebook") {
+			return '<a href="' + escapeHtml(normalizedUrl) + '" target="_blank" rel="noopener" class="annuaire-social annuaire-social-icon annuaire-outbound" data-presta-id="' + prestaId + '" data-link-label="' + linkLabel + '" data-source-area="' + area + '" aria-label="Facebook"><img src="images/logo-facebook.png" alt="Facebook" class="annuaire-social-image"></a>';
+		}
+
 		const iconClass = getSocialIcon(label);
 		const iconHtml = iconClass ? '<i class="' + iconClass + '" aria-hidden="true"></i>' : "";
 		return '<a href="' + escapeHtml(normalizedUrl) + '" target="_blank" rel="noopener" class="annuaire-social annuaire-outbound" data-presta-id="' + prestaId + '" data-link-label="' + linkLabel + '" data-source-area="' + area + '">' + iconHtml + '<span>' + label + "</span></a>";
