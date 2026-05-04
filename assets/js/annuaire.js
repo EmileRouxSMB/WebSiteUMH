@@ -71,7 +71,7 @@
 	function formatDepartementsCouverts(values) {
 		const list = (values || []).map(function (item) {
 			const token = normalizeDepartementToken(item);
-			return token === "ALL" ? "France entiere" : token;
+			return token === "ALL" ? "France entière" : token;
 		}).filter(Boolean);
 		return list.join(", ");
 	}
@@ -258,7 +258,7 @@
 		const title = escapeHtml(product.title || "Ressource recommandee");
 
 		return "" +
-			'<section class="fiche-payhip" aria-label="Produit recommande">' +
+			'<section class="fiche-payhip" aria-label="Produit recommandé">' +
 			'<p class="fiche-payhip-eyebrow">Pour aller plus loin</p>' +
 			'<h4 class="fiche-payhip-title">' + title + "</h4>" +
 			'<div class="payhip-embed-page" data-key="' + key + '">...</div>' +
@@ -362,8 +362,8 @@
 
 	function renderCards(items) {
 		if (!items.length) {
-			resultsContainer.innerHTML = '<div class="annuaire-empty">Aucun partenaire ne correspond a ce filtrage.</div>';
-			countElement.textContent = "0 partenaire trouve";
+			resultsContainer.innerHTML = '<div class="annuaire-empty">Aucun partenaire ne correspond à ce filtrage.</div>';
+			countElement.textContent = "0 partenaire trouvé";
 			return;
 		}
 
@@ -446,7 +446,7 @@
 		}).join("");
 
 		departementList.innerHTML = departements.map(function (departement) {
-			const label = departement === "ALL" ? "ALL (France entiere)" : departement;
+			const label = departement === "ALL" ? "ALL (France entière)" : departement;
 			return '<option value="' + escapeHtml(departement) + '">' + escapeHtml(label) + "</option>";
 		}).join("");
 	}
@@ -482,7 +482,7 @@
 			.then(handleAnnuaireData)
 			.catch(function () {
 				countElement.textContent = "Erreur de chargement";
-				resultsContainer.innerHTML = '<div class="annuaire-empty">Le fichier partenaires n\'a pas pu etre charge. Verifie data/prestataires.json ou lance le site via un serveur local pour tester la page.</div>';
+				resultsContainer.innerHTML = '<div class="annuaire-empty">Le fichier partenaires n\'a pas pu être chargé. Vérifie data/prestataires.json ou lance le site via un serveur local pour tester la page.</div>';
 			});
 	}
 

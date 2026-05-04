@@ -39,10 +39,10 @@
 
 		const file = photoFile.files[0];
 		if (acceptedPhotoTypes.indexOf(file.type) === -1) {
-			throw new Error("La photo doit etre au format JPG, PNG ou WebP.");
+			throw new Error("La photo doit être au format JPG, PNG ou WebP.");
 		}
 		if (file.size > maxPhotoSize) {
-			throw new Error("La photo ne doit pas depasser 5 Mo.");
+			throw new Error("La photo ne doit pas dépasser 5 Mo.");
 		}
 		return file;
 	}
@@ -55,7 +55,7 @@
 				resolve(result.split(",")[1] || "");
 			};
 			reader.onerror = function () {
-				reject(new Error("La photo n'a pas pu etre lue."));
+				reject(new Error("La photo n'a pas pu être lue."));
 			};
 			reader.readAsDataURL(file);
 		});
@@ -64,7 +64,7 @@
 	async function buildPrestataireObject() {
 		const selectedTypes = getSelectedTypes();
 		if (!selectedTypes.length) {
-			throw new Error("Selectionnez au moins un type de prestation.");
+			throw new Error("Sélectionnez au moins un type de prestation.");
 		}
 
 		const rawDepartements = String(document.getElementById("departementsCouverts").value || "")
@@ -74,7 +74,7 @@
 
 		const departementsUniques = Array.from(new Set(rawDepartements));
 		if (!departementsUniques.length) {
-			throw new Error("Saisissez au moins un departement valide (ex: 74, 73, 2A, ALL).");
+			throw new Error("Saisissez au moins un département valide (ex: 74, 73, 2A, ALL).");
 		}
 
 		const instagram = document.getElementById("instagram").value.trim();
@@ -144,13 +144,14 @@
 			method: "POST",
 			headers: {
 				// text/plain evite le preflight CORS sur Apps Script
+				// text/plain évite le preflight CORS sur Apps Script
 				"Content-Type": "text/plain;charset=utf-8"
 			},
 			body: JSON.stringify(prestataire),
 			redirect: "follow"
 		}).then(function (response) {
 			if (!response.ok) {
-				throw new Error("Echec envoi API (" + response.status + ")");
+				throw new Error("Échec envoi API (" + response.status + ")");
 			}
 			return response.text();
 		});
@@ -165,17 +166,17 @@
 
 		try {
 			const prestataire = await buildPrestataireObject();
-			setStatus("Envoi en cours...", false);
+			setStatus("Envoi en cours…", false);
 			await sendToApi(prestataire);
 			if (apiUrl) {
-				setStatus("Merci, votre demande a ete transmise.", false);
+				setStatus("Merci, votre demande a été transmise.", false);
 			} else {
 				setStatus("Formulaire valide, mais apiUrl est vide dans assets/js/umh-config.js.", true);
 			}
 		} catch (error) {
 			const message = String(error && error.message ? error.message : error);
 			if (message.indexOf("Failed to fetch") !== -1) {
-				setStatus("Erreur reseau/CORS. Verifie le deploiement Google Apps Script (Web app, acces Anyone, URL /exec).", true);
+				setStatus("Erreur réseau/CORS. Vérifie le déploiement Google Apps Script (Web app, accès Anyone, URL /exec).", true);
 			} else {
 				setStatus("Erreur: " + message, true);
 			}
@@ -187,7 +188,7 @@
 			try {
 				const selectedPhoto = getPhotoSelection();
 				if (selectedPhoto) {
-					setStatus("Photo selectionnee: " + selectedPhoto.name, false);
+					setStatus("Photo sélectionnée : " + selectedPhoto.name, false);
 				}
 			} catch (error) {
 				photoFile.value = "";
