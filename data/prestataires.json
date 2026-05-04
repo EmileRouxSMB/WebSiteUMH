@@ -7,6 +7,7 @@
     "Décoration",
     "Fleuriste",
     "Lieu",
+    "Musique / DJ",
     "Papeterie",
     "Patisserie",
     "Photo",
@@ -568,6 +569,33 @@
       "enLigne": false,
       "cgAcceptee": true,
       "photoDepotUrl": "https://drive.google.com/file/d/1irvxfOMFeqiXzSzb8Y3ohwWqAF616R2C/view?usp=drivesdk"
+    },
+    {
+      "nomCommercial": "Mikl3 Evènement",
+      "numeroSiret": 52794484700047,
+      "numeroDeTel": 607876716,
+      "email": "mikl3@hotmail.com",
+      "typeDePrestation": [
+        "Photo / Vidéo",
+        "Animation",
+        "Musique / DJ"
+      ],
+      "departementsCouverts": [
+        "ALL"
+      ],
+      "siteWeb": "",
+      "instagram": "https://www.instagram.com/mikl3evenement/",
+      "facebook": "https://www.facebook.com/Mikl3Evenement",
+      "tiktok": "",
+      "descriptionDesPrestationsProposees": "Je propose le service d'animation, sonorisation et éclairage pour tous types d'événements.\nJe suis animateur événementiel avant tout mais je propose également un service de photographe de mariage.\nMikl3 Evènement\nMichaël Marchand",
+      "personnalisationUMH": "",
+      "miseEnAvant": false,
+      "photo": "",
+      "dateInscription": "2026-05-03T22:00:00.000Z",
+      "dateMAJ": "",
+      "enLigne": false,
+      "cgAcceptee": true,
+      "photoDepotUrl": "https://drive.google.com/file/d/1weR2t2yY8fqYH62ZLX7Pmg2Itw4pH2xK/view?usp=drivesdk"
     }
   ]
 }
