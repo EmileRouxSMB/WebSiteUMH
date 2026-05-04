@@ -6,13 +6,20 @@
 	const countElement = document.getElementById("annuaire-count");
 	const resetButton = document.getElementById("annuaire-reset");
 	const detailContainer = document.getElementById("fiche-prestataire-content");
+	const payhipContainer = document.getElementById("fiche-prestataire-payhip");
 	const annuaireArticle = document.getElementById("annuaire");
 	const ficheArticle = document.getElementById("fiche-prestataire");
 	const payhipConfig = window.UMH_PAYHIP_PRODUCTS || { products: [] };
 	const payhipScriptUrl = String(payhipConfig.scriptUrl || "https://payhip.com/embed-page.js?v=24u68985").trim();
 
-	if (!typeSelect || !departementInput || !departementList || !resultsContainer || !countElement || !resetButton || !detailContainer) {
+	if (!typeSelect || !departementInput || !departementList || !resultsContainer || !countElement || !resetButton || !detailContainer || !payhipContainer) {
 		return;
+	}
+
+	const ficheReturnLinks = ficheArticle ? ficheArticle.querySelectorAll(".fiche-return") : [];
+	const lastFicheReturn = ficheReturnLinks.length ? ficheReturnLinks[ficheReturnLinks.length - 1] : null;
+	if (lastFicheReturn && lastFicheReturn.parentNode) {
+		lastFicheReturn.insertAdjacentElement("afterend", payhipContainer);
 	}
 
 	let prestataires = [];
@@ -259,21 +266,30 @@
 	}
 
 	function refreshPayhipEmbed() {
-		const embed = detailContainer.querySelector(".payhip-embed-page");
-		if (!embed || !payhipScriptUrl) {
+		const section = payhipContainer.querySelector(".fiche-payhip");
+		const embed = payhipContainer.querySelector(".payhip-embed-page");
+		if (!section || !embed || !payhipScriptUrl) {
 			return;
 		}
 
-		const existingScript = document.querySelector('script[data-umh-payhip-script="true"]');
-		if (existingScript && existingScript.parentNode) {
-			existingScript.parentNode.removeChild(existingScript);
+		const existingScripts = payhipContainer.querySelectorAll('script[data-umh-payhip-script="true"]');
+		existingScripts.forEach(function (scriptNode) {
+			if (scriptNode.parentNode) {
+				scriptNode.parentNode.removeChild(scriptNode);
+			}
+		});
+
+		const globalScript = document.querySelector('script[data-umh-payhip-script-global="true"]');
+		if (globalScript && globalScript.parentNode) {
+			globalScript.parentNode.removeChild(globalScript);
 		}
 
 		const script = document.createElement("script");
+		script.type = "text/javascript";
 		script.src = payhipScriptUrl;
-		script.async = true;
 		script.setAttribute("data-umh-payhip-script", "true");
-		document.body.appendChild(script);
+		script.setAttribute("data-umh-payhip-script-global", "true");
+		section.appendChild(script);
 	}
 
 	function renderPrestataireDetail(prestataire) {
@@ -307,12 +323,14 @@
 			(websiteDetail ? websiteDetail : "") +
 			(socials ? '<div class="fiche-socials">' + socials + "</div>" : "") +
 			"</div>" +
-			renderPayhipEmbed() +
 			"</div>";
+
+		payhipContainer.innerHTML = renderPayhipEmbed();
 	}
 
 	function showAnnuaire() {
 		currentPrestataireId = "";
+		payhipContainer.innerHTML = "";
 		document.body.classList.remove("is-fiche-prestataire-visible");
 		if (annuaireArticle) {
 			annuaireArticle.hidden = false;
