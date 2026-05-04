@@ -46,21 +46,25 @@ jobs:
             echo "should_run=false" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Generate umh-config.js from CI URL
+        if: steps.paris_time.outputs.should_run == 'true'
+        run: node docs/generate-umh-config.mjs
+
       - name: Sync static JSON from Google Apps Script
         if: steps.paris_time.outputs.should_run == 'true'
         run: node docs/sync-prestataires-json.mjs
 
-      - name: Commit updated JSON
+      - name: Commit generated config and updated JSON
         if: steps.paris_time.outputs.should_run == 'true'
         shell: bash
         run: |
-          if git diff --quiet -- data/prestataires.json; then
+          if git diff --quiet -- assets/js/umh-config.js data/prestataires.json; then
             echo "Aucun changement a commit."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/prestataires.json
-          git commit -m "chore: sync prestataires json"
+          git add assets/js/umh-config.js data/prestataires.json
+          git commit -m "chore: sync prestataires config and json"
           git push

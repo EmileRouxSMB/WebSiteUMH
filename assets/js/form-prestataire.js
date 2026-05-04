@@ -1,12 +1,11 @@
 (function () {
 	const form = document.getElementById("prestataire-form");
 	const typeSelect = document.getElementById("typeDePrestation");
-	const typeCustom = document.getElementById("typeCustom");
 	const photoFile = document.getElementById("photoFile");
 	const status = document.getElementById("submit-status");
 	const apiUrl = (window.UMH_CONFIG && window.UMH_CONFIG.apiUrl ? String(window.UMH_CONFIG.apiUrl) : "").trim();
 
-	if (!form || !typeSelect || !typeCustom || !status) {
+	if (!form || !typeSelect || !status) {
 		return;
 	}
 
@@ -28,15 +27,9 @@
 	}
 
 	function getSelectedTypes() {
-		const selected = Array.from(typeSelect.selectedOptions).map(function (opt) {
+		return Array.from(typeSelect.selectedOptions).map(function (opt) {
 			return opt.value.trim();
 		}).filter(Boolean);
-
-		const custom = typeCustom.value.trim();
-		if (custom && selected.indexOf(custom) === -1) {
-			selected.push(custom);
-		}
-		return selected;
 	}
 
 	function getPhotoSelection() {

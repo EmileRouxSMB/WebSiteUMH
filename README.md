@@ -33,17 +33,19 @@ Etapes:
 - Execute as: `Me`
 - Who has access: `Anyone`
 5. Copier l'URL du Web app (`.../exec`).
-6. Mettre l'URL dans `assets/js/umh-config.js` pour le front:
-- `apiUrl: "https://script.google.com/macros/s/.../exec"`
-7. Ajouter aussi un secret GitHub `SYNC_PRESTATAIRES_API_URL` avec cette meme URL:
+6. Ajouter un secret GitHub `SYNC_PRESTATAIRES_API_URL` avec l'URL du Web app:
 - `Settings > Secrets and variables > Actions > New repository secret`
-8. Le workflow GitHub `.github/workflows/sync-prestataires-json.yml` lance chaque jour une synchronisation du JSON statique.
+7. Le workflow GitHub `.github/workflows/sync-prestataires-json.yml`:
+- genere `assets/js/umh-config.js` a partir de `SYNC_PRESTATAIRES_API_URL`
+- synchronise `data/prestataires.json` depuis cette meme URL
+- commit les fichiers mis a jour
 
 Notes:
 - `POST` ajoute une ligne dans la feuille.
 - `GET` retourne le JSON complet (`typeDePrestationOptions` + `prestataires`).
 - Le script `docs/sync-prestataires-json.mjs` telecharge ce JSON et remplace `data/prestataires.json`.
-- En CI, le script lit d'abord le secret `SYNC_PRESTATAIRES_API_URL`, puis retombe sur `assets/js/umh-config.js` si le secret n'est pas defini.
+- En CI, `docs/generate-umh-config.mjs` injecte `SYNC_PRESTATAIRES_API_URL` dans `assets/js/umh-config.js`.
+- Ensuite, `docs/sync-prestataires-json.mjs` lit d'abord `SYNC_PRESTATAIRES_API_URL`, puis retombe sur `assets/js/umh-config.js` si le secret n'est pas defini.
 - Les photos ne sont pas resolues depuis le JSON. Le front deduit uniquement l'image a partir du handle Instagram dans `images/partenaires/`.
 - `assets/js/annuaire.js` et le chargement des types dans `assets/js/form-prestataire.js` lisent uniquement `data/prestataires.json`.
 - Le workflow est planifie en UTC mais ne synchronise effectivement qu'a minuit heure de Paris.
