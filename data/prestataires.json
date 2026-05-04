@@ -2,7 +2,6 @@
   "typeDePrestationOptions": [
     "Animation",
     "Cadeaux personnalisés",
-    "Coiffure",
     "Création robes de mariées",
     "Décoration",
     "Fleuriste",
@@ -355,27 +354,27 @@
       "photoDepotUrl": ""
     },
     {
-      "nomCommercial": "Un mariage heureux",
-      "numeroSiret": 12345678912345,
+      "nomCommercial": "Test",
+      "numeroSiret": 98745632147856,
       "numeroDeTel": "",
       "email": "milou.roux@gmail.com",
-      "typeDePrestation": "Coiffure",
+      "typeDePrestation": "Photo / Vidéo",
       "departementsCouverts": [
-        "ALL"
+        "89"
       ],
       "siteWeb": "",
-      "instagram": "@toto",
+      "instagram": "@Test1",
       "facebook": "",
       "tiktok": "",
-      "descriptionDesPrestationsProposees": "voila",
+      "descriptionDesPrestationsProposees": "Test workflow image",
       "personnalisationUMH": "",
       "miseEnAvant": false,
       "photo": "",
       "dateInscription": "2026-05-03T22:00:00.000Z",
       "dateMAJ": "",
-      "enLigne": false,
+      "enLigne": true,
       "cgAcceptee": true,
-      "photoDepotUrl": "https://drive.google.com/file/d/1xdy8VunD6v_o1ogfGMo6Y_ETjDhxR9D3/view?usp=drivesdk"
+      "photoDepotUrl": "https://drive.google.com/file/d/1tWSCWHaE8r5hZ-bFCi1n5D2XuUt6r8pk/view?usp=drivesdk"
     }
   ]
 }
