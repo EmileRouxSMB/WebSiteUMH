@@ -5,5 +5,5 @@ window.UMH_CONFIG = {
 
   // Liste des types visible dans nouveau-prestataire.html
   // C'est ici que tu modifies la liste manuellement.
-  prestationOptions:  ["Lieu", "Photo / Vidéo", "Traiteur", "Coiffure", "Maquillage", "Animation", "Musique / DJ", "Décoration", "Officiant de cérémonie", "Service / Maitre d'hôtel", "Création robes de mariées", "Cadeaux personnalisés", "Papeterie", "Fleuriste", "Patisserie", "Autre"];
+  prestationOptions: ["Lieu", "Photo / Vidéo", "Traiteur", "Coiffure", "Maquillage", "Animation", "Musique / DJ", "Décoration", "Officiant de cérémonie", "Service / Maitre d'hôtel", "Création robes de mariées", "Cadeaux personnalisés", "Papeterie", "Fleuriste", "Patisserie", "Autre"]
 };
