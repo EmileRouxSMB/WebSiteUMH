@@ -43,10 +43,10 @@
       "email": "contact@jmrevedeprestige.fr",
       "typeDePrestation": "Décoration",
       "departementsCouverts": [
-        "22",
-        "29",
-        "56",
-        "35"
+        "\"22\"",
+        "\"29\"",
+        "\"56\"",
+        "\"35\""
       ],
       "siteWeb": "mrevedeprestige.fr",
       "instagram": "@jm_revedeprestige",
@@ -115,7 +115,8 @@
       "email": "cotretclaire@hotmail.com",
       "typeDePrestation": "Service / Maitre d'hôtel",
       "departementsCouverts": [
-        "26.07"
+        "26",
+        "07"
       ],
       "siteWeb": "",
       "instagram": "@les_cocktails_a_ju",
@@ -162,7 +163,7 @@
       "email": "",
       "typeDePrestation": "Cadeaux personnalisés",
       "departementsCouverts": [
-        "42"
+        "\"42\""
       ],
       "siteWeb": "",
       "instagram": "@maedeco_loire",
@@ -185,7 +186,7 @@
       "email": "isafeedesfleurs@gmail.com",
       "typeDePrestation": "Fleuriste",
       "departementsCouverts": [
-        "974"
+        "\"974\""
       ],
       "siteWeb": "",
       "instagram": "@isa_fee_des_fleurs",
@@ -508,7 +509,7 @@
       "descriptionDesPrestationsProposees": "Cocospinner Studio transforme votre mariage en une expérience immersive inoubliable grâce à son Videobooth 360° d'exception.\n\nNous concevons des vidéos souvenir entièrement personnalisées (création de vos initiales, couleurs et musique) pour que chaque invité reparte avec un film unique à votre image.\n\nNotre équipe se déplace sur votre lieu de réception pour une prestation clé en main, de l'installation à l'envoi instantané des vidéos. \n\nUne touche originale pour rendre unique votre plus beau jour.\n\nTarifs à partir de 550 €",
       "personnalisationUMH": "",
       "miseEnAvant": false,
-      "photo": "cocospinner",
+      "photo": "coco_spinner",
       "dateInscription": "2026-04-26T22:00:00.000Z",
       "dateMAJ": "",
       "enLigne": true,
