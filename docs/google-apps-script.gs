@@ -64,9 +64,14 @@ function doPost(e) {
   }
 }
 
-function doGet() {
+function doGet(e) {
+  return doGetWithParams_(e || {});
+}
+
+function doGetWithParams_(e) {
   const sheet = getOrCreateSheet_();
   const values = sheet.getDataRange().getValues();
+  const includeImages = wantsImageSync_(e);
   if (values.length <= 1) {
     return jsonResponse_({ typeDePrestationOptions: [], prestataires: [] });
   }
@@ -74,6 +79,12 @@ function doGet() {
   const rows = values.slice(1);
   const prestataires = rows
     .map(rowToPrestataire_)
+    .map(function (p) {
+      if (includeImages) {
+        p.photoSync = buildPhotoSync_(p);
+      }
+      return p;
+    })
     .filter(function (p) { return p.nomCommercial; });
 
   const typeSet = {};
@@ -140,6 +151,44 @@ function saveUploadedPhoto_(payload) {
   return file.getUrl();
 }
 
+function wantsImageSync_(e) {
+  const raw = value_(e && e.parameter && e.parameter.includeImages).toLowerCase();
+  return raw === "1" || raw === "true" || raw === "yes";
+}
+
+function buildPhotoSync_(prestataire) {
+  if (!prestataire || !prestataire.enLigne || !prestataire.photoDepotUrl) {
+    return null;
+  }
+
+  const fileId = extractDriveFileId_(prestataire.photoDepotUrl);
+  if (!fileId) {
+    return null;
+  }
+
+  try {
+    const file = DriveApp.getFileById(fileId);
+    const mimeType = value_(file.getMimeType());
+    if (ACCEPTED_PHOTO_MIME_TYPES.indexOf(mimeType) === -1) {
+      return null;
+    }
+
+    const handle = instagramHandle_(prestataire.instagram) || slugify_(prestataire.nomCommercial);
+    if (!handle) {
+      return null;
+    }
+
+    return {
+      handle: handle,
+      extension: extensionFromMimeType_(mimeType),
+      mimeType: mimeType,
+      data: Utilities.base64Encode(file.getBlob().getBytes())
+    };
+  } catch (error) {
+    return null;
+  }
+}
+
 function getOrCreatePhotoFolder_() {
   const folders = DriveApp.getFoldersByName(PHOTO_FOLDER_NAME);
   if (folders.hasNext()) {
@@ -160,6 +209,23 @@ function instagramHandle_(value) {
   raw = raw.replace(/^https?:\/\/(www\.)?instagram\.com\//i, "");
   raw = raw.replace(/^@/, "");
   return raw.split(/[\/?#]/)[0].trim().toLowerCase();
+}
+
+function extractDriveFileId_(url) {
+  const raw = value_(url);
+  if (!raw) return "";
+
+  const directMatch = raw.match(/\/d\/([a-zA-Z0-9_-]+)/);
+  if (directMatch) {
+    return directMatch[1];
+  }
+
+  const idMatch = raw.match(/[?&]id=([a-zA-Z0-9_-]+)/);
+  if (idMatch) {
+    return idMatch[1];
+  }
+
+  return "";
 }
 
 function slugify_(value) {

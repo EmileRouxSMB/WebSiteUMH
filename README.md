@@ -50,3 +50,39 @@ Notes:
 - `assets/js/annuaire.js` et le chargement des types dans `assets/js/form-prestataire.js` lisent uniquement `data/prestataires.json`.
 - Le workflow est planifie en UTC mais ne synchronise effectivement qu'a minuit heure de Paris.
 - Le workflow utilise `actions/checkout@v6` et `actions/setup-node@v6` avec Node.js 24.
+
+## Workflow des images prestataire
+Flux actuel:
+1. Le prestataire choisit une image dans `nouveau-prestataire.html`.
+2. `assets/js/form-prestataire.js` verifie le type (`JPG`, `PNG`, `WebP`) et la taille max (`5 Mo`).
+3. Le front convertit l'image en base64 et l'envoie dans le payload `photoUpload` au `doPost` Google Apps Script.
+4. `docs/google-apps-script.gs` decode l'image, cree un fichier dans Google Drive et stocke son URL dans la colonne `photoDepotUrl` du Google Sheet.
+
+Ou arrivent les images:
+- Dossier Google Drive: `UMH - Photos prestataires a valider`
+- Feuille Google Sheets: colonne `photoDepotUrl`
+
+Automatisation CI:
+- Lors du `sync-prestataires-json`, si `enLigne == true` et qu'une image upload existe dans Drive, la CI peut recuperer l'image via Apps Script.
+- La CI ne rapatrie l'image que si aucune image locale n'existe deja pour ce handle dans `images/partenaires/`.
+- Les fichiers deja presents dans `images/partenaires/` ne sont ni retouches ni retelescharges.
+
+Ce qui reste vrai:
+- L'image n'est pas exposee directement dans `data/prestataires.json`
+- Le site public n'affiche pas l'URL Drive
+
+Comment le site affiche les images actuellement:
+- `assets/js/annuaire.js` ignore `photoDepotUrl`
+- Le front reconstruit des chemins locaux a partir du handle Instagram:
+- `images/partenaires/<handle>.jpg`
+- `images/partenaires/<handle>.jpeg`
+- `images/partenaires/<handle>.png`
+- `images/partenaires/<handle>.webp`
+- Si aucune image locale n'existe, le fallback est `images/logo.png`
+
+Workflow de validation recommande:
+1. Verifier la nouvelle ligne dans le Google Sheet.
+2. Ouvrir le lien `photoDepotUrl` et controler la photo.
+3. Mettre `enLigne` a `true` dans le Google Sheet quand la fiche est prete.
+4. Laisser la CI regenerer `data/prestataires.json` via `sync-prestataires-json`.
+5. Si aucune image locale n'existe deja pour ce handle, la CI copiera automatiquement l'image Drive dans `images/partenaires/<handle>.*`.
