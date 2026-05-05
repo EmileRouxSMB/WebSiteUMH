@@ -542,7 +542,7 @@
       "photo": "",
       "dateInscription": "2026-05-03T22:00:00.000Z",
       "dateMAJ": "",
-      "enLigne": false,
+      "enLigne": true,
       "cgAcceptee": true,
       "photoDepotUrl": "https://drive.google.com/file/d/1pmojlkwYr929giReEdc0xUMZ5A7cM4Z_/view?usp=drivesdk"
     },
@@ -566,7 +566,7 @@
       "photo": "",
       "dateInscription": "2026-05-03T22:00:00.000Z",
       "dateMAJ": "",
-      "enLigne": false,
+      "enLigne": true,
       "cgAcceptee": true,
       "photoDepotUrl": "https://drive.google.com/file/d/1irvxfOMFeqiXzSzb8Y3ohwWqAF616R2C/view?usp=drivesdk"
     },
@@ -593,9 +593,78 @@
       "photo": "",
       "dateInscription": "2026-05-03T22:00:00.000Z",
       "dateMAJ": "",
-      "enLigne": false,
+      "enLigne": true,
       "cgAcceptee": true,
       "photoDepotUrl": "https://drive.google.com/file/d/1weR2t2yY8fqYH62ZLX7Pmg2Itw4pH2xK/view?usp=drivesdk"
+    },
+    {
+      "nomCommercial": "CopainCam",
+      "numeroSiret": 99092976400010,
+      "numeroDeTel": "",
+      "email": "branding@lauriejeanparis.fr",
+      "typeDePrestation": "Photo / Vidéo",
+      "departementsCouverts": [
+        "ALL"
+      ],
+      "siteWeb": "https://copaincam.fr",
+      "instagram": "@copaincam",
+      "facebook": "@copaincam",
+      "tiktok": "@copaincam",
+      "descriptionDesPrestationsProposees": "Et si le plus beau film de votre mariage était réalisé par vos proches ? 🥂  \n\nAvec CopainCam, la capture de vos souvenirs devient authentique, spontanée et fun. Laurie vous loue ses caméscopes vintage pour mariage, prêts à l'emploi, pour transformer vos invités en réalisateurs de vos plus beaux souvenirs.  \n\nLe concept est simple :  \n📦 Vous recevez : une CopainBox prêt-à-filmer de 3 caméscopes (ou plus) avec tout le matériel associé, livrés partout en France.  \n📹 Vous filmez : pas de mise en scène, juste la spontanéité, les rires et l'émotion brute captés par ceux qui vous aiment. \n 🎞️ Vous nous renvoyez le matériel puis s'offre à vous deux choix : \n1. Récupérer les plans bruts : nous trions, organisons et vous transférons les rushs\n2. Votre film mariage : notre vidéaste Laurie crée pour vous un film sur-mesure, vivant et immersif à partir de ce qu'ont filmé vos proches\n\nPourquoi choisir CopainCam ?  \n✅ Une expérience clé en main : le matériel est simple à utiliser et fourni dans la 📦CopainBox \n✅ Trois caméscopes mariage pour maximiser les points de vue durant votre événement\n✅ Le charme unique \"2000s\" du grain vintage que la 4K ne pourra jamais imiter #homemovievibes \n✅ Une animation pour les invités : moins de smartphones levés et plus de moments vécus ensemble",
+      "personnalisationUMH": "",
+      "miseEnAvant": false,
+      "photo": "",
+      "dateInscription": "2026-05-04T22:00:00.000Z",
+      "dateMAJ": "",
+      "enLigne": false,
+      "cgAcceptee": true,
+      "photoDepotUrl": "https://drive.google.com/file/d/1zgny5KdqTz_HbU0jhCALNWdsHuwFOZ7D/view?usp=drivesdk"
+    },
+    {
+      "nomCommercial": "CopainCam",
+      "numeroSiret": 99092976400010,
+      "numeroDeTel": "",
+      "email": "branding@lauriejeanparis.fr",
+      "typeDePrestation": "Photo / Vidéo",
+      "departementsCouverts": [
+        "ALL"
+      ],
+      "siteWeb": "https://copaincam.fr",
+      "instagram": "@copaincam",
+      "facebook": "@copaincam",
+      "tiktok": "@copaincam",
+      "descriptionDesPrestationsProposees": "Et si le plus beau film de votre mariage était réalisé par vos proches ? 🥂  \n\nAvec CopainCam, la capture de vos souvenirs devient authentique, spontanée et fun. Laurie vous loue ses caméscopes vintage pour mariage, prêts à l'emploi, pour transformer vos invités en réalisateurs de vos plus beaux souvenirs.  \n\nLe concept est simple :  \n📦 Vous recevez : une CopainBox prêt-à-filmer de 3 caméscopes (ou plus) avec tout le matériel associé, livrés partout en France.  \n📹 Vous filmez : pas de mise en scène, juste la spontanéité, les rires et l'émotion brute captés par ceux qui vous aiment. \n 🎞️ Vous nous renvoyez le matériel puis s'offre à vous deux choix : \n1. Récupérer les plans bruts : nous trions, organisons et vous transférons les rushs\n2. Votre film mariage : notre vidéaste Laurie crée pour vous un film sur-mesure, vivant et immersif à partir de ce qu'ont filmé vos proches\n\nPourquoi choisir CopainCam ?  \n✅ Une expérience clé en main : le matériel est simple à utiliser et fourni dans la 📦CopainBox \n✅ Trois caméscopes mariage pour maximiser les points de vue durant votre événement\n✅ Le charme unique \"2000s\" du grain vintage que la 4K ne pourra jamais imiter #homemovievibes \n✅ Une animation pour les invités : moins de smartphones levés et plus de moments vécus ensemble",
+      "personnalisationUMH": "",
+      "miseEnAvant": false,
+      "photo": "",
+      "dateInscription": "2026-05-04T22:00:00.000Z",
+      "dateMAJ": "",
+      "enLigne": false,
+      "cgAcceptee": true,
+      "photoDepotUrl": "https://drive.google.com/file/d/1ivduA2Sfto-YIMdAPAMAbRjPAdLD9-07/view?usp=drivesdk"
+    },
+    {
+      "nomCommercial": "CopainCam",
+      "numeroSiret": 99092976400010,
+      "numeroDeTel": "",
+      "email": "branding@lauriejeanparis.fr",
+      "typeDePrestation": "Photo / Vidéo",
+      "departementsCouverts": [
+        "ALL"
+      ],
+      "siteWeb": "https://copaincam.fr",
+      "instagram": "@copaincam",
+      "facebook": "@copaincam",
+      "tiktok": "@copaincam",
+      "descriptionDesPrestationsProposees": "Et si le plus beau film de votre mariage était réalisé par vos proches ? 🥂  \n\nAvec CopainCam, la capture de vos souvenirs devient authentique, spontanée et fun. Laurie vous loue ses caméscopes vintage pour mariage, prêts à l'emploi, pour transformer vos invités en réalisateurs de vos plus beaux souvenirs.  \n\nLe concept est simple :  \n📦 Vous recevez : une CopainBox prêt-à-filmer de 3 caméscopes (ou plus) avec tout le matériel associé, livrés partout en France.  \n📹 Vous filmez : pas de mise en scène, juste la spontanéité, les rires et l'émotion brute captés par ceux qui vous aiment. \n 🎞️ Vous nous renvoyez le matériel puis s'offre à vous deux choix : \n1. Récupérer les plans bruts : nous trions, organisons et vous transférons les rushs\n2. Votre film mariage : notre vidéaste Laurie crée pour vous un film sur-mesure, vivant et immersif à partir de ce qu'ont filmé vos proches\n\nPourquoi choisir CopainCam ?  \n✅ Une expérience clé en main : le matériel est simple à utiliser et fourni dans la 📦CopainBox \n✅ Trois caméscopes mariage pour maximiser les points de vue durant votre événement\n✅ Le charme unique \"2000s\" du grain vintage que la 4K ne pourra jamais imiter #homemovievibes \n✅ Une animation pour les invités : moins de smartphones levés et plus de moments vécus ensemble",
+      "personnalisationUMH": "",
+      "miseEnAvant": false,
+      "photo": "",
+      "dateInscription": "2026-05-04T22:00:00.000Z",
+      "dateMAJ": "",
+      "enLigne": false,
+      "cgAcceptee": true,
+      "photoDepotUrl": "https://drive.google.com/file/d/1IKaruxVvF6j8_Bo9e6Pze9_YzDCw7mdz/view?usp=drivesdk"
     }
   ]
 }
