@@ -113,6 +113,7 @@ function rowToPrestataire_(row) {
     p.typeDePrestation = p.typeDePrestation[0];
   }
   p.departementsCouverts = parseArray_(p.departementsCouverts);
+  p.numeroDeTel = normalizePhoneNumber_(p.numeroDeTel);
   p.miseEnAvant = toBool_(p.miseEnAvant);
   p.enLigne = toBool_(p.enLigne);
   p.cgAcceptee = toBool_(p.cgAcceptee);
@@ -295,6 +296,25 @@ function toBool_(value) {
 
 function boolToString_(value) {
   return value ? "true" : "false";
+}
+
+function normalizePhoneNumber_(value) {
+  const raw = value_(value);
+  if (!raw) return "";
+
+  const compact = raw.replace(/[^\d+]/g, "");
+  if (!compact) return raw;
+
+  if (compact.indexOf("+33") === 0) {
+    return "0" + compact.slice(3).replace(/\D/g, "");
+  }
+
+  const digits = compact.replace(/\D/g, "");
+  if (digits.length === 9) {
+    return "0" + digits;
+  }
+
+  return raw;
 }
 
 function value_(v) {

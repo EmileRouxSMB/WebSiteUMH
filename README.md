@@ -70,6 +70,7 @@ Automatisation CI:
 Ce qui reste vrai:
 - L'image n'est pas exposee directement dans `data/prestataires.json`
 - Le site public n'affiche pas l'URL Drive
+- Les miniatures de carte sont generees en CI dans `images/partenaires/thumbs/` (WebP), a partir des images HD de `images/partenaires/`.
 
 Comment le site affiche les images actuellement:
 - `assets/js/annuaire.js` ignore `photoDepotUrl`
@@ -78,6 +79,9 @@ Comment le site affiche les images actuellement:
 - `images/partenaires/<handle>.jpeg`
 - `images/partenaires/<handle>.png`
 - `images/partenaires/<handle>.webp`
+- Pour les cartes annuaire, il tente d'abord:
+- `images/partenaires/thumbs/<handle>.webp` (puis `.jpg/.jpeg/.png`)
+- et retombe automatiquement sur la HD si la miniature manque.
 - Si aucune image locale n'existe, le fallback est `images/logo.png`
 
 Workflow de validation recommande:

@@ -1,0 +1,10 @@
+{
+  "name": "website-umh",
+  "private": true,
+  "scripts": {
+    "generate:partner-thumbs": "node docs/generate-partner-thumbnails.mjs"
+  },
+  "devDependencies": {
+    "sharp": "0.34.4"
+  }
+}

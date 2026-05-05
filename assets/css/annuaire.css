@@ -196,7 +196,20 @@ body.single-page-annuaire h6 {
 
 #annuaire .annuaire-social-icon,
 #fiche-prestataire .annuaire-social-icon {
-	padding: 0.35rem;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	box-shadow: none;
+	border-radius: 0;
+}
+
+#annuaire .annuaire-social-icon:hover,
+#annuaire .annuaire-social-icon:focus,
+#fiche-prestataire .annuaire-social-icon:hover,
+#fiche-prestataire .annuaire-social-icon:focus {
+	background: transparent;
+	border: 0;
+	box-shadow: none;
 }
 
 #annuaire .annuaire-social-image,

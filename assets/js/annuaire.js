@@ -89,6 +89,31 @@
 		return String(value || "").trim().length > 0;
 	}
 
+	function formatPhoneNumber(value) {
+		const raw = String(value || "").trim();
+		if (!raw) {
+			return "";
+		}
+
+		const compact = raw.replace(/[^\d+]/g, "");
+		if (!compact) {
+			return raw;
+		}
+
+		if (compact.startsWith("+33")) {
+			const localFromIntl = "0" + compact.slice(3);
+			return formatPhoneNumber(localFromIntl);
+		}
+
+		const digits = compact.replace(/\D/g, "");
+		const normalizedDigits = digits.length === 9 ? "0" + digits : digits;
+		if (!/^0\d{9}$/.test(normalizedDigits)) {
+			return raw;
+		}
+
+		return normalizedDigits.replace(/(\d{2})(?=\d)/g, "$1 ").trim();
+	}
+
 	function normalizeExternalUrl(url, label) {
 		const raw = String(url || "").trim();
 		if (!raw) {
@@ -132,15 +157,29 @@
 		return raw.split(/[/?#]/)[0].trim().toLowerCase();
 	}
 
-	function getPhotoCandidates(prestataire) {
-		const handle = getInstagramHandle(prestataire.instagram);
+	function getPhotoHandle(prestataire) {
+		const explicitHandle = String(prestataire && prestataire.photo || "").trim().toLowerCase();
+		if (explicitHandle) {
+			return explicitHandle;
+		}
+		return getInstagramHandle(prestataire && prestataire.instagram);
+	}
+
+	function getPhotoCandidates(prestataire, forThumbnail) {
+		const handle = getPhotoHandle(prestataire);
 		if (!handle) {
 			return [];
 		}
 
-		return ["jpg", "jpeg", "png", "webp"].map(function (extension) {
+		const thumbCandidates = ["webp", "jpg", "jpeg", "png"].map(function (extension) {
+			return "images/partenaires/thumbs/" + handle + "." + extension;
+		});
+		const hdCandidates = ["jpg", "jpeg", "png", "webp"].map(function (extension) {
 			return "images/partenaires/" + handle + "." + extension;
 		});
+
+		const ordered = forThumbnail ? thumbCandidates.concat(hdCandidates) : hdCandidates.concat(thumbCandidates);
+		return Array.from(new Set(ordered));
 	}
 
 	window.umhUseNextPartnerPhoto = function (image) {
@@ -207,12 +246,12 @@
 	}
 
 	function createPhotoMarkup(prestataire) {
-		const photoCandidates = getPhotoCandidates(prestataire);
+		const photoCandidates = getPhotoCandidates(prestataire, true);
 		const photoSrc = photoCandidates.length ? escapeHtml(photoCandidates[0]) : "images/logo.png";
 		const fallbackAttr = photoCandidates.length ? ' data-photo-candidates="' + escapeHtml(photoCandidates.join("|")) + '" data-photo-index="0"' : "";
 		const altText = escapeHtml(prestataire.nomCommercial || "Partenaire");
 		const prestaId = prestataire && prestataire._uid ? escapeHtml(prestataire._uid) : "";
-		return '<a href="#fiche-prestataire" class="annuaire-photo-link annuaire-name-link" data-presta-id="' + prestaId + '" aria-label="Voir la fiche de ' + altText + '"><img class="annuaire-photo" src="' + photoSrc + '" alt="' + altText + '"' + fallbackAttr + ' onerror="window.umhUseNextPartnerPhoto(this);"></a>';
+		return '<a href="#fiche-prestataire" class="annuaire-photo-link annuaire-name-link" data-presta-id="' + prestaId + '" aria-label="Voir la fiche de ' + altText + '"><img class="annuaire-photo" src="' + photoSrc + '" alt="' + altText + '" loading="lazy" decoding="async"' + fallbackAttr + ' onerror="window.umhUseNextPartnerPhoto(this);"></a>';
 	}
 
 	function trackPrestataireClick(prestataire) {
@@ -295,7 +334,7 @@
 	function renderPrestataireDetail(prestataire) {
 		const types = getTypes(prestataire);
 		const typeLabel = types.join(" / ");
-		const photoCandidates = getPhotoCandidates(prestataire);
+		const photoCandidates = getPhotoCandidates(prestataire, false);
 		const photoSrc = photoCandidates.length ? escapeHtml(photoCandidates[0]) : "images/logo.png";
 		const fallbackAttr = photoCandidates.length ? ' data-photo-candidates="' + escapeHtml(photoCandidates.join("|")) + '" data-photo-index="0"' : "";
 		const socials = [
@@ -315,7 +354,7 @@
 			(hasText(prestataire.personnalisationUMH) ? '<p class="fiche-lead">' + escapeHtml(prestataire.personnalisationUMH) + "</p>" : "") +
 			(hasText(prestataire.descriptionDesPrestationsProposees) ? '<p class="fiche-description">' + escapeHtml(prestataire.descriptionDesPrestationsProposees) + "</p>" : "") +
 			'<div class="fiche-details">' +
-			(hasText(prestataire.numeroDeTel) ? '<p class="fiche-detail"><strong>Telephone</strong><span>' + escapeHtml(prestataire.numeroDeTel) + "</span></p>" : "") +
+			(hasText(prestataire.numeroDeTel) ? '<p class="fiche-detail"><strong>Telephone</strong><span>' + escapeHtml(formatPhoneNumber(prestataire.numeroDeTel)) + "</span></p>" : "") +
 			'<p class="fiche-detail"><strong>Email</strong><a href="mailto:' + escapeHtml(prestataire.email) + '">' + escapeHtml(prestataire.email) + "</a></p>" +
 			'<p class="fiche-detail"><strong>Departements</strong><span>' + escapeHtml(formatDepartementsCouverts(prestataire.departementsCouverts || [])) + "</span></p>" +
 			"</div>" +
@@ -397,7 +436,7 @@
 				(hasText(prestataire.descriptionDesPrestationsProposees) ? '<p class="annuaire-description">' + escapeHtml(prestataire.descriptionDesPrestationsProposees) + "</p>" : "") +
 				(hasText(prestataire.personnalisationUMH) ? '<p class="annuaire-umh">' + escapeHtml(prestataire.personnalisationUMH) + "</p>" : "") +
 				'<div class="annuaire-details">' +
-				(hasText(prestataire.numeroDeTel) ? '<div class="annuaire-detail"><strong>Telephone</strong><span>' + escapeHtml(prestataire.numeroDeTel) + "</span></div>" : "") +
+				(hasText(prestataire.numeroDeTel) ? '<div class="annuaire-detail"><strong>Telephone</strong><span>' + escapeHtml(formatPhoneNumber(prestataire.numeroDeTel)) + "</span></div>" : "") +
 				'<div class="annuaire-detail"><strong>Email</strong><a href="mailto:' + escapeHtml(prestataire.email) + '">' + escapeHtml(prestataire.email) + "</a></div>" +
 				(websiteDetail ? '<div class="annuaire-detail"><strong>Site web</strong>' + websiteDetail + "</div>" : "") +
 				'<div class="annuaire-detail"><strong>Departements</strong><span>' + escapeHtml(formatDepartementsCouverts(prestataire.departementsCouverts || [])) + "</span></div>" +
