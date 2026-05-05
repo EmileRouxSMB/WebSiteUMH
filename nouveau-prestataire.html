@@ -66,6 +66,23 @@
 					</label>
 				</div>
 
+				<div class="captcha-block" aria-live="polite">
+					<label for="captchaAnswer">
+						<span class="label-title required-label">Vérification anti-spam</span>
+						<span id="captchaQuestion" class="captcha-question"></span>
+						<input type="text" id="captchaAnswer" inputmode="numeric" autocomplete="off" required />
+						<small class="field-note">Renseignez le résultat pour confirmer l'envoi du formulaire.</small>
+					</label>
+					<button type="button" id="captchaRefresh" class="button-secondary">Changer la question</button>
+				</div>
+
+				<div class="honeypot-field" aria-hidden="true">
+					<label for="website">
+						<span class="label-title">Ne pas remplir ce champ</span>
+						<input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+					</label>
+				</div>
+
 				<div class="actions">
 					<button type="submit">Envoyer</button>
 				</div>

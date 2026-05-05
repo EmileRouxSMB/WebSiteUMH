@@ -3,7 +3,13 @@
 	const typeSelect = document.getElementById("typeDePrestation");
 	const photoFile = document.getElementById("photoFile");
 	const status = document.getElementById("submit-status");
+	const captchaQuestion = document.getElementById("captchaQuestion");
+	const captchaAnswer = document.getElementById("captchaAnswer");
+	const captchaRefresh = document.getElementById("captchaRefresh");
+	const honeypotField = document.getElementById("website");
 	const apiUrl = (window.UMH_CONFIG && window.UMH_CONFIG.apiUrl ? String(window.UMH_CONFIG.apiUrl) : "").trim();
+
+	let captchaExpectedAnswer = "";
 
 	if (!form || !typeSelect || !status) {
 		return;
@@ -30,6 +36,43 @@
 		return Array.from(typeSelect.selectedOptions).map(function (opt) {
 			return opt.value.trim();
 		}).filter(Boolean);
+	}
+
+	function randomInt(min, max) {
+		return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+
+	function refreshCaptcha() {
+		if (!captchaQuestion || !captchaAnswer) {
+			return;
+		}
+
+		const left = randomInt(2, 9);
+		const right = randomInt(1, 9);
+		const useAddition = Math.random() >= 0.5;
+
+		if (useAddition) {
+			captchaExpectedAnswer = String(left + right);
+			captchaQuestion.textContent = "Combien font " + left + " + " + right + " ?";
+		} else {
+			const maxValue = Math.max(left, right);
+			const minValue = Math.min(left, right);
+			captchaExpectedAnswer = String(maxValue - minValue);
+			captchaQuestion.textContent = "Combien font " + maxValue + " - " + minValue + " ?";
+		}
+
+		captchaAnswer.value = "";
+	}
+
+	function validateCaptcha() {
+		if (honeypotField && honeypotField.value.trim()) {
+			throw new Error("Validation anti-spam refusée.");
+		}
+
+		if (!captchaAnswer || captchaAnswer.value.trim() !== captchaExpectedAnswer) {
+			refreshCaptcha();
+			throw new Error("Le CAPTCHA est incorrect. Merci de réessayer.");
+		}
 	}
 
 	function getPhotoSelection() {
@@ -121,6 +164,16 @@
 		status.style.color = isError ? "#9a2f2f" : "#2f5f45";
 	}
 
+	function setSubmittingState(isSubmitting) {
+		const submitButton = form.querySelector('button[type="submit"]');
+		if (!submitButton) {
+			return;
+		}
+
+		submitButton.disabled = isSubmitting;
+		submitButton.textContent = isSubmitting ? "Envoi en cours..." : "Envoyer";
+	}
+
 	function fillTypeOptions(types) {
 		typeSelect.innerHTML = "";
 		types.forEach(function (type) {
@@ -144,14 +197,13 @@
 			method: "POST",
 			headers: {
 				// text/plain evite le preflight CORS sur Apps Script
-				// text/plain évite le preflight CORS sur Apps Script
 				"Content-Type": "text/plain;charset=utf-8"
 			},
 			body: JSON.stringify(prestataire),
 			redirect: "follow"
 		}).then(function (response) {
 			if (!response.ok) {
-				throw new Error("Échec envoi API (" + response.status + ")");
+				throw new Error("Echec envoi API (" + response.status + ")");
 			}
 			return response.text();
 		});
@@ -164,22 +216,30 @@
 			return;
 		}
 
+		setSubmittingState(true);
+
 		try {
+			validateCaptcha();
 			const prestataire = await buildPrestataireObject();
-			setStatus("Envoi en cours…", false);
+			setStatus("Envoi en cours...", false);
 			await sendToApi(prestataire);
 			if (apiUrl) {
-				setStatus("Merci, votre demande a été transmise.", false);
-			} else {
-				setStatus("Formulaire valide, mais apiUrl est vide dans assets/js/umh-config.js.", true);
+				window.location.href = "confirmation-prestataire.html";
+				return;
 			}
+			setStatus("Formulaire valide, mais apiUrl est vide dans assets/js/umh-config.js.", true);
 		} catch (error) {
 			const message = String(error && error.message ? error.message : error);
 			if (message.indexOf("Failed to fetch") !== -1) {
-				setStatus("Erreur réseau/CORS. Vérifie le déploiement Google Apps Script (Web app, accès Anyone, URL /exec).", true);
+				setStatus("Erreur reseau/CORS. Verifie le deploiement Google Apps Script (Web app, acces Anyone, URL /exec).", true);
 			} else {
 				setStatus("Erreur: " + message, true);
 			}
+			if (message.indexOf("CAPTCHA") !== -1 && captchaAnswer) {
+				captchaAnswer.focus();
+			}
+		} finally {
+			setSubmittingState(false);
 		}
 	});
 
@@ -188,7 +248,7 @@
 			try {
 				const selectedPhoto = getPhotoSelection();
 				if (selectedPhoto) {
-					setStatus("Photo sélectionnée : " + selectedPhoto.name, false);
+					setStatus("Photo selectionnee : " + selectedPhoto.name, false);
 				}
 			} catch (error) {
 				photoFile.value = "";
@@ -197,5 +257,10 @@
 		});
 	}
 
+	if (captchaRefresh) {
+		captchaRefresh.addEventListener("click", refreshCaptcha);
+	}
+
 	loadTypes();
+	refreshCaptcha();
 })();
