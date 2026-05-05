@@ -612,7 +612,7 @@
       "instagram": "@copaincam",
       "facebook": "@copaincam",
       "tiktok": "@copaincam",
-      "descriptionDesPrestationsProposees": "Et si le plus beau film de votre mariage était réalisé par vos proches ? 🥂  \n\nAvec CopainCam, la capture de vos souvenirs devient authentique, spontanée et fun. Laurie vous loue ses caméscopes vintage pour mariage, prêts à l'emploi, pour transformer vos invités en réalisateurs de vos plus beaux souvenirs.  \n\nLe concept est simple :  \n📦 Vous recevez : une CopainBox prêt-à-filmer de 3 caméscopes (ou plus) avec tout le matériel associé, livrés partout en France.  \n📹 Vous filmez : pas de mise en scène, juste la spontanéité, les rires et l'émotion brute captés par ceux qui vous aiment. \n 🎞️ Vous nous renvoyez le matériel puis s'offre à vous deux choix : \n1. Récupérer les plans bruts : nous trions, organisons et vous transférons les rushs\n2. Votre film mariage : notre vidéaste Laurie crée pour vous un film sur-mesure, vivant et immersif à partir de ce qu'ont filmé vos proches\n\nPourquoi choisir CopainCam ?  \n✅ Une expérience clé en main : le matériel est simple à utiliser et fourni dans la 📦CopainBox \n✅ Trois caméscopes mariage pour maximiser les points de vue durant votre événement\n✅ Le charme unique \"2000s\" du grain vintage que la 4K ne pourra jamais imiter #homemovievibes \n✅ Une animation pour les invités : moins de smartphones levés et plus de moments vécus ensemble",
+      "descriptionDesPrestationsProposees": "Et si le plus beau film de votre mariage était réalisé par vos proches ? 🥂  \n\nAvec CopainCam, la capture de vos souvenirs devient authentique, spontanée et fun. Laurie vous loue ses caméscopes vintage pour mariage, prêts à l'emploi, pour transformer vos invités en réalisateurs de vos plus beaux souvenirs.  \n\nLe concept est simple :  \n📦 Vous recevez : une CopainBox prêt-à-filmer de 3 caméscopes (ou plus) avec tout le matériel associé, livrés partout en France.  \n\n📹 Vous filmez : pas de mise en scène, juste la spontanéité, les rires et l'émotion brute captés par ceux qui vous aiment. \n\n 🎞️ Vous nous renvoyez le matériel puis s'offre à vous deux choix : \n\n1. Récupérer les plans bruts : nous trions, organisons et vous transférons les rushs\n\n2. Votre film mariage : notre vidéaste Laurie crée pour vous un film sur-mesure, vivant et immersif à partir de ce qu'ont filmé vos proches\n\nPourquoi choisir CopainCam ?\n  \n✅ Une expérience clé en main : le matériel est simple à utiliser et fourni dans la 📦CopainBox\n \n✅ Trois caméscopes mariage pour maximiser les points de vue durant votre événement\n\n✅ Le charme unique \"2000s\" du grain vintage que la 4K ne pourra jamais imiter #homemovievibes\n \n✅ Une animation pour les invités : moins de smartphones levés et plus de moments vécus ensemble",
       "personnalisationUMH": "",
       "miseEnAvant": false,
       "photo": "",
@@ -781,7 +781,7 @@
       "photo": "",
       "dateInscription": "2026-05-04T22:00:00.000Z",
       "dateMAJ": "",
-      "enLigne": true,
+      "enLigne": false,
       "cgAcceptee": true,
       "photoDepotUrl": "https://drive.google.com/file/d/1sQ6t34qU9A6Pm9Mb-kFMQmpB4THKeWgO/view?usp=drivesdk"
     },
@@ -810,6 +810,29 @@
       "enLigne": true,
       "cgAcceptee": true,
       "photoDepotUrl": "https://drive.google.com/file/d/1sdujoxCgvcOIt0RmuBMDPKPBiEurmhUD/view?usp=drivesdk"
+    },
+    {
+      "nomCommercial": "Alizée Duhaut Photographe",
+      "numeroSiret": 88356168000017,
+      "numeroDeTel": "",
+      "email": "alizeeduhaut.photographe@gmail.com",
+      "typeDePrestation": "Photo / Vidéo",
+      "departementsCouverts": [
+        "ALL"
+      ],
+      "siteWeb": "https://www.alizeeduhautphotographe.com/mariage",
+      "instagram": "@alizeeduhautmemories",
+      "facebook": "A.Duhaut Photographe",
+      "tiktok": "",
+      "descriptionDesPrestationsProposees": "Photographe de mariage dans les Hauts-de-France, j’accompagne les couples qui souhaitent des images authentiques, élégantes et chargées d’émotion.\n\n\nMon approche est celle du reportage photo, pour raconter votre journée telle qu’elle se vit : les regards échangés, les rires spontanés, les instants forts comme les détails les plus discrets.\nLe tout avec un style chaleureux, cinématique et élégant \n\nBasée dans le Pas de Calais, je me déplace partout dans les Hauts-de-France, Nord, Somme, Aisne, Oise, et partout en France et dans le monde, où leur histoire m’emmène.",
+      "personnalisationUMH": "",
+      "miseEnAvant": false,
+      "photo": "",
+      "dateInscription": "2026-05-04T22:00:00.000Z",
+      "dateMAJ": "",
+      "enLigne": true,
+      "cgAcceptee": true,
+      "photoDepotUrl": "https://drive.google.com/file/d/1x1E6wYK90HtTjg-ovGzUT9oudO-ggJuM/view?usp=drivesdk"
     }
   ]
 }
