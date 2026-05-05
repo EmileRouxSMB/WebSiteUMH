@@ -89,6 +89,18 @@
 		return String(value || "").trim().length > 0;
 	}
 
+	function truncateText(value, maxChars) {
+		const raw = String(value || "").replace(/\s+/g, " ").trim();
+		if (!raw || raw.length <= maxChars) {
+			return raw;
+		}
+
+		const cutoff = raw.slice(0, maxChars + 1);
+		const lastSpace = cutoff.lastIndexOf(" ");
+		const truncated = (lastSpace > Math.floor(maxChars * 0.6) ? cutoff.slice(0, lastSpace) : raw.slice(0, maxChars)).trim();
+		return truncated + "...";
+	}
+
 	function formatPhoneNumber(value) {
 		const raw = String(value || "").trim();
 		if (!raw) {
@@ -339,8 +351,7 @@
 		const fallbackAttr = photoCandidates.length ? ' data-photo-candidates="' + escapeHtml(photoCandidates.join("|")) + '" data-photo-index="0"' : "";
 		const socials = [
 			safeLink(prestataire.instagram, "Instagram", prestataire, "fiche_prestataire"),
-			safeLink(prestataire.facebook, "Facebook", prestataire, "fiche_prestataire"),
-			safeLink(prestataire.tiktok, "TikTok", prestataire, "fiche_prestataire")
+			safeLink(prestataire.facebook, "Facebook", prestataire, "fiche_prestataire")
 		].filter(Boolean).join("");
 		const websiteDetail = buildWebsiteDetail(prestataire.siteWeb, prestataire, "fiche_prestataire", "fiche-site-link", "Retrouvez-moi ici");
 
@@ -414,11 +425,9 @@
 			const badges = [
 				prestataire.miseEnAvant ? '<span class="annuaire-badge">Mise en avant</span>' : ""
 			].join("");
-			const instagramTopLink = safeLink(prestataire.instagram, "Instagram", prestataire, "annuaire_card");
-
-			const socials = [
-				safeLink(prestataire.facebook, "Facebook", prestataire, "annuaire_card"),
-				safeLink(prestataire.tiktok, "TikTok", prestataire, "annuaire_card")
+			const topSocials = [
+				safeLink(prestataire.instagram, "Instagram", prestataire, "annuaire_card"),
+				safeLink(prestataire.facebook, "Facebook", prestataire, "annuaire_card")
 			].filter(Boolean).join("");
 			const websiteDetail = buildWebsiteDetail(prestataire.siteWeb, prestataire, "annuaire_card", "");
 
@@ -429,11 +438,11 @@
 				'<div class="annuaire-badges">' + badges + "</div>" +
 				'<h3><a href="#fiche-prestataire" class="annuaire-name-link" data-presta-id="' + escapeHtml(prestataire._uid) + '">' + escapeHtml(prestataire.nomCommercial) + "</a></h3>" +
 				'<p class="prestataire-type">' + escapeHtml(typeLabel) + "</p>" +
-				(instagramTopLink ? '<div class="annuaire-socials">' + instagramTopLink + "</div>" : "") +
+				(topSocials ? '<div class="annuaire-socials">' + topSocials + "</div>" : "") +
 				"</div>" +
 				createPhotoMarkup(prestataire) +
 				"</div>" +
-				(hasText(prestataire.descriptionDesPrestationsProposees) ? '<p class="annuaire-description">' + escapeHtml(prestataire.descriptionDesPrestationsProposees) + "</p>" : "") +
+				(hasText(prestataire.descriptionDesPrestationsProposees) ? '<p class="annuaire-description">' + escapeHtml(truncateText(prestataire.descriptionDesPrestationsProposees, 260)) + "</p>" : "") +
 				(hasText(prestataire.personnalisationUMH) ? '<p class="annuaire-umh">' + escapeHtml(prestataire.personnalisationUMH) + "</p>" : "") +
 				'<div class="annuaire-details">' +
 				(hasText(prestataire.numeroDeTel) ? '<div class="annuaire-detail"><strong>Telephone</strong><span>' + escapeHtml(formatPhoneNumber(prestataire.numeroDeTel)) + "</span></div>" : "") +
@@ -441,7 +450,6 @@
 				(websiteDetail ? '<div class="annuaire-detail"><strong>Site web</strong>' + websiteDetail + "</div>" : "") +
 				'<div class="annuaire-detail"><strong>Departements</strong><span>' + escapeHtml(formatDepartementsCouverts(prestataire.departementsCouverts || [])) + "</span></div>" +
 				"</div>" +
-				(socials ? '<div class="annuaire-socials">' + socials + "</div>" : "") +
 				"</section>";
 		}).join("");
 	}
