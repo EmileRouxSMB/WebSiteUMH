@@ -3,10 +3,12 @@
     "Animation",
     "Autre",
     "Cadeaux personnalisés",
+    "Coiffure",
     "Création robes de mariées",
     "Décoration",
     "Fleuriste",
     "Lieu",
+    "Maquillage",
     "Musique / DJ",
     "Papeterie",
     "Patisserie",
@@ -721,7 +723,7 @@
       "photo": "",
       "dateInscription": "2026-05-04T22:00:00.000Z",
       "dateMAJ": "",
-      "enLigne": false,
+      "enLigne": true,
       "cgAcceptee": true,
       "photoDepotUrl": "https://drive.google.com/file/d/17Wt7QQIJQ1jI-JMzmriuW0Or7nSCbZ1t/view?usp=drivesdk"
     },
@@ -753,9 +755,61 @@
       "photo": "",
       "dateInscription": "2026-05-04T22:00:00.000Z",
       "dateMAJ": "",
-      "enLigne": false,
+      "enLigne": true,
       "cgAcceptee": true,
       "photoDepotUrl": ""
+    },
+    {
+      "nomCommercial": "Gaëlle Makeup Artistry",
+      "numeroSiret": 80898651700031,
+      "numeroDeTel": 601993698,
+      "email": "gaellemakeupartist@gmail.com",
+      "typeDePrestation": [
+        "Coiffure",
+        "Maquillage"
+      ],
+      "departementsCouverts": [
+        "45"
+      ],
+      "siteWeb": "",
+      "instagram": "@gaellemakeupartist",
+      "facebook": "https://www.facebook.com/share/18sh2DzidW/",
+      "tiktok": "@gaellemakeupartist",
+      "descriptionDesPrestationsProposees": "Je propose des prestations maquillage mais aussi coiffure evenementielle afin de permettre a la future mariée d’aborder ses preparatifs en toute détente.",
+      "personnalisationUMH": "",
+      "miseEnAvant": false,
+      "photo": "",
+      "dateInscription": "2026-05-04T22:00:00.000Z",
+      "dateMAJ": "",
+      "enLigne": true,
+      "cgAcceptee": true,
+      "photoDepotUrl": "https://drive.google.com/file/d/1sQ6t34qU9A6Pm9Mb-kFMQmpB4THKeWgO/view?usp=drivesdk"
+    },
+    {
+      "nomCommercial": "Le temps d'un clic",
+      "numeroSiret": 10158574300012,
+      "numeroDeTel": 688718595,
+      "email": "bonvallet.amelie@gmail.com",
+      "typeDePrestation": "Photo / Vidéo",
+      "departementsCouverts": [
+        "08",
+        "54",
+        "51",
+        "57"
+      ],
+      "siteWeb": "https://letempsdunclic.mypixieset.com/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAb21jcARm-llleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA81NjcwNjczNDMzNTI0MjcAAadLyFU7ZKggF8hA0nDXDbQvKqC2i20LpwdVSxYufgUj7I_Or-neC4ijgCYizg_aem_cj56vDbqGd5QQ3UN_7O4hg",
+      "instagram": "https://www.instagram.com/le.temps.d.un.clic?igsh=MXA4bmw1YmxyNzlieQ==",
+      "facebook": "",
+      "tiktok": "",
+      "descriptionDesPrestationsProposees": "Séance d'engagement, after day, préparation des mariés.\n\nFormule 1 : reportage mairie + photos couple et groupe\nFormule 2 : reportage jusqu'au vin d'honneur inclus avec option entrée des mariés.\nFormule 3 : reportage jusqu'à l'entrée des mariés avec 3h de soirée",
+      "personnalisationUMH": "",
+      "miseEnAvant": false,
+      "photo": "",
+      "dateInscription": "2026-05-04T22:00:00.000Z",
+      "dateMAJ": "",
+      "enLigne": true,
+      "cgAcceptee": true,
+      "photoDepotUrl": "https://drive.google.com/file/d/1sdujoxCgvcOIt0RmuBMDPKPBiEurmhUD/view?usp=drivesdk"
     }
   ]
 }
