@@ -46,8 +46,16 @@ body.single-page-annuaire h6 {
 	color: #885577;
 }
 
+#annuaire .annuaire-filtres > div {
+	display: flex;
+	flex-direction: column;
+}
+
 #annuaire .annuaire-filtres select,
 #annuaire .annuaire-filtres input {
+	width: 100%;
+	min-height: 2.75rem;
+	box-sizing: border-box;
 	background: rgba(255, 255, 255, 0.18);
 	border: 1px solid rgba(136, 85, 119, 0.22);
 	border-radius: 0.75rem;
@@ -929,3 +937,4 @@ body.single-page-annuaire #footer {
 		max-width: calc(100vw - 1.2rem);
 	}
 }
+

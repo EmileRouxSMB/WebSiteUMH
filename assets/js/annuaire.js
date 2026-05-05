@@ -420,36 +420,21 @@
 		countElement.textContent = items.length + " partenaire" + (items.length > 1 ? "s trouvés" : " trouvé");
 
 		resultsContainer.innerHTML = items.map(function (prestataire) {
-			const types = getTypes(prestataire);
-			const typeLabel = types.join(" / ");
-			const badges = [
-				prestataire.miseEnAvant ? '<span class="annuaire-badge">Mise en avant</span>' : ""
-			].join("");
 			const topSocials = [
 				safeLink(prestataire.instagram, "Instagram", prestataire, "annuaire_card"),
 				safeLink(prestataire.facebook, "Facebook", prestataire, "annuaire_card")
 			].filter(Boolean).join("");
-			const websiteDetail = buildWebsiteDetail(prestataire.siteWeb, prestataire, "annuaire_card", "");
 
 			return "" +
 				'<section class="annuaire-card' + (prestataire.miseEnAvant ? " is-featured" : "") + '">' +
 				'<div class="annuaire-card-header">' +
 				"<div>" +
-				'<div class="annuaire-badges">' + badges + "</div>" +
 				'<h3><a href="#fiche-prestataire" class="annuaire-name-link" data-presta-id="' + escapeHtml(prestataire._uid) + '">' + escapeHtml(prestataire.nomCommercial) + "</a></h3>" +
-				'<p class="prestataire-type">' + escapeHtml(typeLabel) + "</p>" +
 				(topSocials ? '<div class="annuaire-socials">' + topSocials + "</div>" : "") +
 				"</div>" +
 				createPhotoMarkup(prestataire) +
 				"</div>" +
 				(hasText(prestataire.descriptionDesPrestationsProposees) ? '<p class="annuaire-description">' + escapeHtml(truncateText(prestataire.descriptionDesPrestationsProposees, 260)) + "</p>" : "") +
-				(hasText(prestataire.personnalisationUMH) ? '<p class="annuaire-umh">' + escapeHtml(prestataire.personnalisationUMH) + "</p>" : "") +
-				'<div class="annuaire-details">' +
-				(hasText(prestataire.numeroDeTel) ? '<div class="annuaire-detail"><strong>Telephone</strong><span>' + escapeHtml(formatPhoneNumber(prestataire.numeroDeTel)) + "</span></div>" : "") +
-				'<div class="annuaire-detail"><strong>Email</strong><a href="mailto:' + escapeHtml(prestataire.email) + '">' + escapeHtml(prestataire.email) + "</a></div>" +
-				(websiteDetail ? '<div class="annuaire-detail"><strong>Site web</strong>' + websiteDetail + "</div>" : "") +
-				'<div class="annuaire-detail"><strong>Departements</strong><span>' + escapeHtml(formatDepartementsCouverts(prestataire.departementsCouverts || [])) + "</span></div>" +
-				"</div>" +
 				"</section>";
 		}).join("");
 	}
