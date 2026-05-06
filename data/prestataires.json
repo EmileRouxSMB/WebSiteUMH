@@ -483,7 +483,7 @@
       "numeroSiret": 84316231400028,
       "numeroDeTel": "",
       "email": "contact@cocospinner.fr",
-      "typeDePrestation": [],
+      "typeDePrestation": "Photo",
       "departementsCouverts": [
         "01",
         "03",
@@ -781,7 +781,7 @@
       "photo": "",
       "dateInscription": "2026-05-04T22:00:00.000Z",
       "dateMAJ": "",
-      "enLigne": false,
+      "enLigne": true,
       "cgAcceptee": true,
       "photoDepotUrl": "https://drive.google.com/file/d/1sQ6t34qU9A6Pm9Mb-kFMQmpB4THKeWgO/view?usp=drivesdk"
     },
@@ -833,6 +833,88 @@
       "enLigne": true,
       "cgAcceptee": true,
       "photoDepotUrl": "https://drive.google.com/file/d/1x1E6wYK90HtTjg-ovGzUT9oudO-ggJuM/view?usp=drivesdk"
+    },
+    {
+      "nomCommercial": "DJ JIM EVENT",
+      "numeroSiret": 94098516100014,
+      "numeroDeTel": 672353020,
+      "email": "jimmy.helleisen@gmail.com",
+      "typeDePrestation": [
+        "Musique / DJ",
+        "Autre"
+      ],
+      "departementsCouverts": [
+        "55",
+        "52",
+        "54",
+        "10",
+        "51",
+        "88"
+      ],
+      "siteWeb": "https://www.djjimevent.fr/",
+      "instagram": "Aucun",
+      "facebook": "Djjimevent",
+      "tiktok": "Djjimevent",
+      "descriptionDesPrestationsProposees": "Animation de mariage haut de gammes avec divers options , comme la fumée lourde,  fontaines d'étincelles  location de tonnelle,  photobooth ect.. nouveauté 2026 feu d'artifice de jour",
+      "personnalisationUMH": "",
+      "miseEnAvant": false,
+      "photo": "",
+      "dateInscription": "2026-05-04T22:00:00.000Z",
+      "dateMAJ": "",
+      "enLigne": true,
+      "cgAcceptee": true,
+      "photoDepotUrl": ""
+    },
+    {
+      "nomCommercial": "schneider gillard nicolas",
+      "numeroSiret": 87779343000019,
+      "numeroDeTel": 681595320,
+      "email": "schneider-nicolas-photos@hotmail.com",
+      "typeDePrestation": "Animation",
+      "departementsCouverts": [
+        "ALL"
+      ],
+      "siteWeb": "",
+      "instagram": "https://www.instagram.com/nicolas_schneider_gillard?igsh=MW0xNjdnb2NxZ3ZwdQ==",
+      "facebook": "https://www.facebook.com/profile.php?id=100072075286107",
+      "tiktok": "",
+      "descriptionDesPrestationsProposees": "Mariage complet photo et spectacle feu.\nPour les déplacements je propose seulement ce que ça me coute en gazole et autoroute\ntarifs et conditions spectacle de feu 2026 .\n13min  400€ environ 3musique au choix .\n25min 500€ musique imposée.\nDéambulation 180€(je me balade et je crache durée environ 5 minutes)\nDéplacement gratuit sur chatellerault et ses alentours 10km\nSi vous prenez plusieurs prestations une remise sera effectuée\nDéplacement de plus de 10km je facture via Michelin et non 0,70cts du kilomètre \nJe fournis l'extincteur et une attestation d'assurance\nJe suis autonome pour la musique j'ai une enceinte \nIl me faut une personne pour s'occuper de l'extincteur\nPour bloqué la date il faudra me renvoyer le contrat signé et l'acompte \nSi impossibilité de prestation cause de vent la prestation et soit remboursée ou reportée\n\nPHOTO mariage complet 1000e hors frais de déplacement",
+      "personnalisationUMH": "",
+      "miseEnAvant": false,
+      "photo": "",
+      "dateInscription": "2026-05-05T22:00:00.000Z",
+      "dateMAJ": "",
+      "enLigne": true,
+      "cgAcceptee": true,
+      "photoDepotUrl": "https://drive.google.com/file/d/1DeNF71rQszllm5sIUH8FkC91CmtkAZMT/view?usp=drivesdk"
+    },
+    {
+      "nomCommercial": "Un bouquet de Souvenirs",
+      "numeroSiret": 97857016600014,
+      "numeroDeTel": 698440469,
+      "email": "unbouquetdesouvenirs@gmail.com",
+      "typeDePrestation": "Photo / Vidéo",
+      "departementsCouverts": [
+        "80",
+        "60",
+        "02",
+        "62",
+        "59",
+        "95"
+      ],
+      "siteWeb": "https://www.unbouquetdesouvenirs.fr",
+      "instagram": "https://www.instagram.com/un_bouquet_de_souvenirs?igsh=MTcwMGRkdTJ2bTkxNQ==",
+      "facebook": "https://www.facebook.com/share/1cvvumamza/",
+      "tiktok": "",
+      "descriptionDesPrestationsProposees": "Reportage mariage complet photo et/ou vidéo \nSéance engagement \nSéance after",
+      "personnalisationUMH": "",
+      "miseEnAvant": false,
+      "photo": "",
+      "dateInscription": "2026-05-05T22:00:00.000Z",
+      "dateMAJ": "",
+      "enLigne": true,
+      "cgAcceptee": true,
+      "photoDepotUrl": "https://drive.google.com/file/d/1u3rNSyt8VHWicw9uj5zBHsjaBxR58wQM/view?usp=drivesdk"
     }
   ]
 }
