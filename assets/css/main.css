@@ -1835,7 +1835,7 @@ input, select, textarea {
 		padding: 0;
 		color: var(--umh-purple) !important;
 		font-size: 0.88rem;
-		font-weight: 600;
+		font-weight: 400;
 		letter-spacing: 0;
 		font-family: var(--umh-body-font);
 	}

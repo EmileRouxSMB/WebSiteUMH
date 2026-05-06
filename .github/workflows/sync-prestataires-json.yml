@@ -61,17 +61,21 @@ jobs:
         if: steps.paris_time.outputs.should_run == 'true'
         run: npm run generate:partner-thumbs
 
+      - name: Generate prestataire pages and sitemap
+        if: steps.paris_time.outputs.should_run == 'true'
+        run: npm run generate:prestataire-pages
+
       - name: Commit generated config and updated JSON
         if: steps.paris_time.outputs.should_run == 'true'
         shell: bash
         run: |
-          if git diff --quiet -- assets/js/umh-config.js data/prestataires.json images/partenaires images/partenaires/thumbs; then
+          if git diff --quiet -- assets/js/umh-config.js data/prestataires.json images/partenaires images/partenaires/thumbs prestataires sitemap.xml; then
             echo "Aucun changement a commit."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/js/umh-config.js data/prestataires.json images/partenaires images/partenaires/thumbs
+          git add assets/js/umh-config.js data/prestataires.json images/partenaires images/partenaires/thumbs prestataires sitemap.xml
           git commit -m "chore(sync-prestataires-json): sync prestataires config and json"
           git push

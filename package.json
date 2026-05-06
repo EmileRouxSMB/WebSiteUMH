@@ -2,7 +2,9 @@
   "name": "website-umh",
   "private": true,
   "scripts": {
-    "generate:partner-thumbs": "node docs/generate-partner-thumbnails.mjs"
+    "generate:partner-optimized": "node docs/generate-partner-optimized-images.mjs",
+    "generate:partner-thumbs": "node docs/generate-partner-thumbnails.mjs",
+    "generate:prestataire-pages": "node docs/generate-prestataire-pages.mjs"
   },
   "devDependencies": {
     "sharp": "0.34.4"

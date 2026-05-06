@@ -26,6 +26,53 @@
 	let typeOptions = [];
 	let currentPrestataireId = "";
 
+	function slugify(input) {
+		return String(input || "")
+			.normalize("NFD")
+			.replace(/[\u0300-\u036f]/g, "")
+			.toLowerCase()
+			.replace(/[^a-z0-9]+/g, "-")
+			.replace(/^-+|-+$/g, "")
+			.replace(/-{2,}/g, "-");
+	}
+
+	function stableHash(input) {
+		let hash = 0;
+		for (let i = 0; i < input.length; i += 1) {
+			hash = (hash * 31 + input.charCodeAt(i)) >>> 0;
+		}
+		return hash.toString(16).padStart(8, "0").slice(0, 6);
+	}
+
+	function assignSeoUrls(items) {
+		const used = Object.create(null);
+		return items.map(function (item) {
+			const base = slugify(item.nomCommercial) || "prestataire";
+			let slug = base;
+			if (used[slug]) {
+				const stableKey = [
+					item.nomCommercial,
+					item.email,
+					item.instagram,
+					item.siteWeb
+				].map(function (value) {
+					return String(value || "").trim().toLowerCase();
+				}).join("|");
+				slug = base + "-" + stableHash(stableKey);
+			}
+			let uniqueSlug = slug;
+			let i = 2;
+			while (used[uniqueSlug]) {
+				uniqueSlug = slug + "-" + i;
+				i += 1;
+			}
+			used[uniqueSlug] = true;
+			item._slug = uniqueSlug;
+			item._url = "prestataires/" + uniqueSlug + ".html";
+			return item;
+		});
+	}
+
 	function getTypes(prestataire) {
 		if (Array.isArray(prestataire && prestataire.typeDePrestation)) {
 			return prestataire.typeDePrestation.filter(Boolean);
@@ -183,6 +230,9 @@
 			return [];
 		}
 
+		const optimizedCandidates = ["webp"].map(function (extension) {
+			return "images/partenaires/optimized/" + handle + "." + extension;
+		});
 		const thumbCandidates = ["webp", "jpg", "jpeg", "png"].map(function (extension) {
 			return "images/partenaires/thumbs/" + handle + "." + extension;
 		});
@@ -190,7 +240,9 @@
 			return "images/partenaires/" + handle + "." + extension;
 		});
 
-		const ordered = forThumbnail ? thumbCandidates.concat(hdCandidates) : hdCandidates.concat(thumbCandidates);
+		const ordered = forThumbnail
+			? thumbCandidates.concat(optimizedCandidates, hdCandidates)
+			: optimizedCandidates.concat(hdCandidates, thumbCandidates);
 		return Array.from(new Set(ordered));
 	}
 
@@ -263,7 +315,8 @@
 		const fallbackAttr = photoCandidates.length ? ' data-photo-candidates="' + escapeHtml(photoCandidates.join("|")) + '" data-photo-index="0"' : "";
 		const altText = escapeHtml(prestataire.nomCommercial || "Partenaire");
 		const prestaId = prestataire && prestataire._uid ? escapeHtml(prestataire._uid) : "";
-		return '<a href="#fiche-prestataire" class="annuaire-photo-link annuaire-name-link" data-presta-id="' + prestaId + '" aria-label="Voir la fiche de ' + altText + '"><img class="annuaire-photo" src="' + photoSrc + '" alt="' + altText + '" loading="lazy" decoding="async"' + fallbackAttr + ' onerror="window.umhUseNextPartnerPhoto(this);"></a>';
+		const ficheUrl = escapeHtml(prestataire._url || "#");
+		return '<a href="' + ficheUrl + '" class="annuaire-photo-link annuaire-name-link" data-presta-id="' + prestaId + '" aria-label="Voir la fiche de ' + altText + '"><img class="annuaire-photo" src="' + photoSrc + '" alt="' + altText + '" loading="lazy" decoding="async"' + fallbackAttr + ' onerror="window.umhUseNextPartnerPhoto(this);"></a>';
 	}
 
 	function trackPrestataireClick(prestataire) {
@@ -271,8 +324,13 @@
 			return;
 		}
 
+		const types = getTypes(prestataire).join(" / ");
 		window.gtag("event", "presta_click", {
-			nomCommercial: prestataire.nomCommercial || ""
+			nomCommercial: prestataire.nomCommercial || "",
+			prestataireNom: prestataire.nomCommercial || "",
+			ficheSlug: prestataire._slug || "",
+			ficheUrl: prestataire._url || "",
+			typeActivite: types
 		});
 	}
 
@@ -281,8 +339,16 @@
 			return;
 		}
 
+		const types = getTypes(prestataire).join(" / ");
 		window.gtag("event", "presta_outbound_click", {
-			nomCommercial: prestataire.nomCommercial || ""
+			nomCommercial: prestataire.nomCommercial || "",
+			prestataireNom: prestataire.nomCommercial || "",
+			ficheSlug: prestataire._slug || "",
+			ficheUrl: prestataire._url || "",
+			typeActivite: types,
+			linkLabel: String(linkLabel || ""),
+			href: String(href || ""),
+			sourceArea: String(sourceArea || "")
 		});
 	}
 
@@ -430,7 +496,7 @@
 				'<section class="annuaire-card' + (prestataire.miseEnAvant ? " is-featured" : "") + '">' +
 				'<div class="annuaire-card-header">' +
 				"<div>" +
-				'<h3><a href="#fiche-prestataire" class="annuaire-name-link" data-presta-id="' + escapeHtml(prestataire._uid) + '">' + escapeHtml(prestataire.nomCommercial) + "</a></h3>" +
+				'<h3><a href="' + escapeHtml(prestataire._url || "#") + '" class="annuaire-name-link" data-presta-id="' + escapeHtml(prestataire._uid) + '">' + escapeHtml(prestataire.nomCommercial) + "</a></h3>" +
 				(expertise ? '<p class="prestataire-type">' + escapeHtml(expertise) + "</p>" : "") +
 				(topSocials ? '<div class="annuaire-socials">' + topSocials + "</div>" : "") +
 				"</div>" +
@@ -500,6 +566,7 @@
 			item._uid = String(index);
 			return item;
 		});
+		prestataires = assignSeoUrls(prestataires);
 
 		populateFilters(prestataires, typeOptions);
 		applyFilters();
@@ -555,7 +622,6 @@
 		}
 
 		trackPrestataireClick(prestataire);
-		showPrestataire(prestataire);
 	});
 
 	document.querySelectorAll(".fiche-return-link").forEach(function (link) {
