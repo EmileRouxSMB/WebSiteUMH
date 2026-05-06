@@ -413,13 +413,14 @@
 	function renderCards(items) {
 		if (!items.length) {
 			resultsContainer.innerHTML = '<div class="annuaire-empty">Aucun partenaire ne correspond à ce filtrage.</div>';
-			countElement.textContent = "0 partenaire trouvé";
+			countElement.textContent = "0 prestataire trouvé pour le moment. Essayez d'élargir votre recherche pour découvrir des professionnels soigneusement sélectionnés.";
 			return;
 		}
 
-		countElement.textContent = items.length + " partenaire" + (items.length > 1 ? "s trouvés" : " trouvé");
+		countElement.textContent = items.length + " prestataire" + (items.length > 1 ? "s" : "") + " sélectionné" + (items.length > 1 ? "s" : "") + " avec soin pour imaginer un mariage élégant, serein et pleinement à votre image.";
 
 		resultsContainer.innerHTML = items.map(function (prestataire) {
+			const expertise = getTypes(prestataire).join(", ");
 			const topSocials = [
 				safeLink(prestataire.instagram, "Instagram", prestataire, "annuaire_card"),
 				safeLink(prestataire.facebook, "Facebook", prestataire, "annuaire_card")
@@ -430,6 +431,7 @@
 				'<div class="annuaire-card-header">' +
 				"<div>" +
 				'<h3><a href="#fiche-prestataire" class="annuaire-name-link" data-presta-id="' + escapeHtml(prestataire._uid) + '">' + escapeHtml(prestataire.nomCommercial) + "</a></h3>" +
+				(expertise ? '<p class="prestataire-type">' + escapeHtml(expertise) + "</p>" : "") +
 				(topSocials ? '<div class="annuaire-socials">' + topSocials + "</div>" : "") +
 				"</div>" +
 				createPhotoMarkup(prestataire) +

@@ -296,23 +296,26 @@
 			<article id="annuaire">
 				<h2 class="major">Nos partenaires mariage</h2>
 				<p class="annuaire-intro">
-					Découvrez nos partenaires de confiance pour organiser un mariage doux, fluide et à votre image.
-					Filtrez par type de prestation et par département pour trouver rapidement les meilleurs
-					professionnels du mariage (lieu, traiteur, photographe, coiffure...) près de chez vous.
+					Retrouvez ici des prestataires sélectionnés avec attention pour vous aider à organiser un mariage
+					serein, fluide et à votre image. Chaque professionnel présenté dans l'annuaire est déclaré,
+					exerce une activité cohérente avec l'univers du mariage et fait l'objet d'une vérification
+					éditoriale, notamment sur la qualité de sa présence en ligne et les retours clients.<br><br>
+					Filtrez par type de prestation et par département pour trouver plus facilement les bons
+					interlocuteurs près de chez vous, avec davantage de confiance au moment de faire votre choix.
 				</p>
 
 				<div class="annuaire-shell">
 					<div class="annuaire-filtres">
 						<div>
+							<label for="filtre-departement">Département où se déroule votre mariage</label>
+							<input type="text" id="filtre-departement" list="liste-departements" placeholder="Ex. : 74, 78, ALL" maxlength="3" />
+							<datalist id="liste-departements"></datalist>
+						</div>
+						<div>
 							<label for="filtre-type">Type de prestation</label>
 							<select id="filtre-type">
 								<option value="">Tous les types</option>
 							</select>
-						</div>
-						<div>
-							<label for="filtre-departement">Département</label>
-							<input type="text" id="filtre-departement" list="liste-departements" placeholder="Ex. : 74, 78, ALL" maxlength="3" />
-							<datalist id="liste-departements"></datalist>
 						</div>
 					</div>
 
