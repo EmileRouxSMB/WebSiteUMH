@@ -1462,6 +1462,60 @@
       "enLigne": true,
       "cgAcceptee": true,
       "photoDepotUrl": "https://drive.google.com/file/d/1yBmlDNpPtp4vT2fsaG7CBTnGRkQfFQmk/view?usp=drivesdk"
+    },
+    {
+      "nomCommercial": "Lina Beauty",
+      "numeroSiret": 79248368700044,
+      "numeroDeTel": 650472524,
+      "email": "linabeauty83@outlook.fr",
+      "typeDePrestation": [
+        "Coiffure",
+        "Maquillage"
+      ],
+      "departementsCouverts": [
+        "83",
+        "06"
+      ],
+      "siteWeb": "",
+      "instagram": "https://www.instagram.com/linabeauty83?igsh=ZnhxNjlvYWo0OGIw&utm_source=qr",
+      "facebook": "",
+      "tiktok": "",
+      "descriptionDesPrestationsProposees": "Maquilleuse & coiffeuse mariage, spécialisée dans les mises en beauté élégantes, naturelles et longue tenue. Prestations sur mesure pour mariées, invitées et shootings.",
+      "personnalisationUMH": "",
+      "miseEnAvant": false,
+      "photo": "",
+      "dateInscription": "2026-05-08T22:00:00.000Z",
+      "dateMAJ": "",
+      "enLigne": true,
+      "cgAcceptee": true,
+      "photoDepotUrl": "https://drive.google.com/file/d/1j_xyzvcrL0llsuo4n3786PxkDHIOwcwv/view?usp=drivesdk"
+    },
+    {
+      "nomCommercial": "A nos photos - Emeline Hanot",
+      "numeroSiret": 95118625300013,
+      "numeroDeTel": 658693479,
+      "email": "h.anosphotos@gmail.com",
+      "typeDePrestation": "Photo / Vidéo",
+      "departementsCouverts": [
+        "80",
+        "02",
+        "60",
+        "59",
+        "62"
+      ],
+      "siteWeb": "https:// anosphotos.com",
+      "instagram": "https://www.instagram.com/anosphotos_lifestyle",
+      "facebook": "@Emeline Hanot",
+      "tiktok": "",
+      "descriptionDesPrestationsProposees": "Capturer les moments les plus authentiques de votre vie, qu'il s'agisse de mariages ou de séances en famille, est ce qui me motive chaque jour.\n\nMon style se concentre sur l'émotion et la spontanéité, pour que chaque photo raconte une histoire unique. \nJe suis impatiente de discuter de votre projet et de créer ensemble des souvenirs inoubliables.",
+      "personnalisationUMH": "",
+      "miseEnAvant": false,
+      "photo": "",
+      "dateInscription": "2026-05-08T22:00:00.000Z",
+      "dateMAJ": "",
+      "enLigne": false,
+      "cgAcceptee": true,
+      "photoDepotUrl": "https://drive.google.com/file/d/10g6HGKCAHEpmb5tJgm3HPiu0QxGqaEtY/view?usp=drivesdk"
     }
   ]
 }
