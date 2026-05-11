@@ -1621,6 +1621,31 @@
       "enLigne": false,
       "cgAcceptee": true,
       "photoDepotUrl": "https://drive.google.com/file/d/1jqIH_iA9OiVAR_uN8qrJvwNHLWFdk8PG/view?usp=drivesdk"
+    },
+    {
+      "nomCommercial": "LB châteaux & fêtes",
+      "numeroSiret": 10467776000019,
+      "numeroDeTel": 769521454,
+      "email": "p.bienvenu55@gmail.com",
+      "typeDePrestation": "Autre",
+      "departementsCouverts": [
+        "55",
+        "54",
+        "08"
+      ],
+      "siteWeb": "",
+      "instagram": "@lb_chateaux",
+      "facebook": "@lb châteaux & fêtes",
+      "tiktok": "",
+      "descriptionDesPrestationsProposees": "Nous proposons la location de matériel festif pour tous vos événements : fontaines à punch, châteaux gonflables et jeux géants pour enfants. Idéal pour anniversaires, mariages, fêtes privées, kermesses et événements d’entreprise, notre matériel apporte une ambiance conviviale et amusante pour petits et grands.",
+      "personnalisationUMH": "",
+      "miseEnAvant": false,
+      "photo": "",
+      "dateInscription": "2026-05-10T22:00:00.000Z",
+      "dateMAJ": "",
+      "enLigne": true,
+      "cgAcceptee": true,
+      "photoDepotUrl": "https://drive.google.com/file/d/1Kx5VX6DqaiKx98kmPE5JRajj3DmjnqmR/view?usp=drivesdk"
     }
   ]
 }
