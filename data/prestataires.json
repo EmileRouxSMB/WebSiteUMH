@@ -1646,6 +1646,30 @@
       "enLigne": true,
       "cgAcceptee": true,
       "photoDepotUrl": "https://drive.google.com/file/d/1Kx5VX6DqaiKx98kmPE5JRajj3DmjnqmR/view?usp=drivesdk"
+    },
+    {
+      "nomCommercial": "Le Pinpon de Jess",
+      "numeroSiret": 98197261500018,
+      "numeroDeTel": "",
+      "email": "jessicalilam@hotmail.com",
+      "typeDePrestation": "Autre",
+      "departementsCouverts": [
+        "13",
+        "83"
+      ],
+      "siteWeb": "",
+      "instagram": "https://www.instagram.com/le_pinpon_de_jess?igsh=MXBoaTFwYncyM2Jrag==",
+      "facebook": "https://www.facebook.com/profile.php?id=61550601329777",
+      "tiktok": "",
+      "descriptionDesPrestationsProposees": "Le Pinpon de Jess se déplace à bord d’un pinpon aménagé, faisant à la fois office de bibliothèque et de dortoir.\nÀ l’intérieur, petits et grands peuvent retrouver une large sélection de jeux et jouets pour tous les âges :\njeux de construction, jeux de trains, petites voitures, courses de voitures et de motos, jeux de société XXL, coloriage et dessin, ainsi que diverses activités manuelles.\nÀ l’extérieur, les enfants peuvent également profiter d’une balancelle et d’un toboggan pour encore profiter lus de plaisir.",
+      "personnalisationUMH": "",
+      "miseEnAvant": false,
+      "photo": "",
+      "dateInscription": "2026-05-11T22:00:00.000Z",
+      "dateMAJ": "",
+      "enLigne": true,
+      "cgAcceptee": true,
+      "photoDepotUrl": "https://drive.google.com/file/d/1YanS_c9uCiCDe0pSdJXpbtXiYvSMUx2e/view?usp=drivesdk"
     }
   ]
 }
