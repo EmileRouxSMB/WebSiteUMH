@@ -1670,6 +1670,31 @@
       "enLigne": true,
       "cgAcceptee": true,
       "photoDepotUrl": "https://drive.google.com/file/d/1YanS_c9uCiCDe0pSdJXpbtXiYvSMUx2e/view?usp=drivesdk"
+    },
+    {
+      "nomCommercial": "Mya Souvenirs Photography",
+      "numeroSiret": 94393625200015,
+      "numeroDeTel": 614637602,
+      "email": "myasouvenirs@gmail.com",
+      "typeDePrestation": "Photo / Vidéo",
+      "departementsCouverts": [
+        "83",
+        "06",
+        "13"
+      ],
+      "siteWeb": "https://mya-souvenirs-photography8.webnode.fr/",
+      "instagram": "@mya_souvenirs_photography",
+      "facebook": "",
+      "tiktok": "",
+      "descriptionDesPrestationsProposees": "Photographe spécialisée dans les mariages, fiançailles, grossesses, portraits, séances famille, anniversaires, baby shower, baptêmes et événements privés.\nJe propose des séances photo naturelles et lumineuses, avec accompagnement personnalisé, retouche professionnelle et livraison d’une galerie en ligne.\nDisponible également pour vidéos souvenirs et reportages événementiels.",
+      "personnalisationUMH": "",
+      "miseEnAvant": false,
+      "photo": "",
+      "dateInscription": "2026-05-12T22:00:00.000Z",
+      "dateMAJ": "",
+      "enLigne": true,
+      "cgAcceptee": true,
+      "photoDepotUrl": ""
     }
   ]
 }
