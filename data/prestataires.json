@@ -1695,6 +1695,29 @@
       "enLigne": true,
       "cgAcceptee": true,
       "photoDepotUrl": ""
+    },
+    {
+      "nomCommercial": "Your Wedding Method",
+      "numeroSiret": 10018866300015,
+      "numeroDeTel": 630070435,
+      "email": "sarah.gltr@hotmail.fr",
+      "typeDePrestation": "Autre",
+      "departementsCouverts": [
+        "ALL"
+      ],
+      "siteWeb": "https://www.yourweddingmethod.fr/",
+      "instagram": "https://www.instagram.com/yourwedding.method?igsh=MXNueHcxMGRob3VqaQ%3D%3D&utm_source=qr",
+      "facebook": "",
+      "tiktok": "https://www.tiktok.com/@yourwedding.method?_r=1&_t=ZN-96Mezubpmkd",
+      "descriptionDesPrestationsProposees": "Coaching en organisation de mariage pour futurs mariés qui veulent organiser leur mariage sans Wedding planner",
+      "personnalisationUMH": "",
+      "miseEnAvant": false,
+      "photo": "",
+      "dateInscription": "2026-05-13T22:00:00.000Z",
+      "dateMAJ": "",
+      "enLigne": false,
+      "cgAcceptee": true,
+      "photoDepotUrl": "https://drive.google.com/file/d/1muiqgkulSKH9T9SwQKkvayOiI4mgQ6Sb/view?usp=drivesdk"
     }
   ]
 }
