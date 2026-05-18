@@ -1818,6 +1818,32 @@
       "enLigne": false,
       "cgAcceptee": true,
       "photoDepotUrl": "https://drive.google.com/file/d/1nVkTYFBxsgb5W9VkEYHtK4zXJeI651Zh/view?usp=drivesdk"
+    },
+    {
+      "nomCommercial": "Labo Bouture",
+      "numeroSiret": 93416980600015,
+      "numeroDeTel": 666307196,
+      "email": "labobouture@outlook.fr",
+      "typeDePrestation": "Fleuriste",
+      "departementsCouverts": [
+        "71",
+        "03",
+        "69",
+        "42"
+      ],
+      "siteWeb": "https://labobouture.com",
+      "instagram": "@labo_bouture",
+      "facebook": "https://www.facebook.com/p/Labo-Bouture-61568626598017/",
+      "tiktok": "https://www.tiktok.com/@labo.bouture",
+      "descriptionDesPrestationsProposees": "Fleuriste indépendante et itinérante en Bourgogne, je me déplace entre Lyon, Dijon et Clermont Ferrand. Spécialisée dans les mariages atypiques, je suis la fleuriste de vos évènements uniques :D\nThème écossais, rock, baroque, automnal, hivernal etc, parlez moi de vous et de votre relation et je vous aiderais a créer votre décoration florale sur mesure.\nMariage petites et moyennes tailles, mariages intimistes, élopement, décoration de table / bouquets / accessoires, fleurs séchées ou fraiches, location de décoration... Contactez moi pour plus de détails!",
+      "personnalisationUMH": "",
+      "miseEnAvant": false,
+      "photo": "",
+      "dateInscription": "2026-05-17T22:00:00.000Z",
+      "dateMAJ": "",
+      "enLigne": false,
+      "cgAcceptee": true,
+      "photoDepotUrl": "https://drive.google.com/file/d/1xqUl32u5Ru_T7Z8KQQ187RVdMx3Hi7z7/view?usp=drivesdk"
     }
   ]
 }
