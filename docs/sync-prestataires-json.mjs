@@ -117,6 +117,10 @@ async function syncPartnerImages(data) {
     }
 
     const existingPath = await findExistingPartnerImagePath(photoSync.handle);
+    if (!String(prestataire.photo || "").trim()) {
+      prestataire.photo = photoSync.handle;
+    }
+
     if (existingPath) {
       continue;
     }

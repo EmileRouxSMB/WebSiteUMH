@@ -75,6 +75,43 @@
 		}
 	}
 
+	function normalizeInstagramHandle(value) {
+		const trimmedValue = String(value || "").trim();
+		if (!trimmedValue) return "";
+		if (/^https?:\/\//i.test(trimmedValue) || /instagram\.com/i.test(trimmedValue) || /[/?#]/.test(trimmedValue)) {
+			return trimmedValue;
+		}
+		return trimmedValue.charAt(0) === "@" ? trimmedValue : "@" + trimmedValue;
+	}
+
+	function validateInstagramField() {
+		const instagramField = document.getElementById("instagram");
+		if (!instagramField) {
+			return "";
+		}
+
+		const normalizedValue = normalizeInstagramHandle(instagramField.value);
+		if (instagramField.value !== normalizedValue) {
+			instagramField.value = normalizedValue;
+		}
+
+		if (!normalizedValue) {
+			instagramField.setCustomValidity("Saisissez un profil Instagram.");
+			return "";
+		}
+		if (/^https?:\/\//i.test(normalizedValue) || /instagram\.com/i.test(normalizedValue) || /[/?#]/.test(normalizedValue)) {
+			instagramField.setCustomValidity("Saisissez uniquement le compte Instagram au format @moncompte, sans URL.");
+			return normalizedValue;
+		}
+		if (!/^@[A-Za-z0-9._]{1,30}$/.test(normalizedValue)) {
+			instagramField.setCustomValidity("Le compte Instagram doit commencer par @ et contenir seulement lettres, chiffres, points ou underscores.");
+			return normalizedValue;
+		}
+
+		instagramField.setCustomValidity("");
+		return normalizedValue;
+	}
+
 	function getPhotoSelection() {
 		if (!photoFile || !photoFile.files || !photoFile.files.length) {
 			return null;
@@ -120,9 +157,9 @@
 			throw new Error("Saisissez au moins un département valide (ex: 74, 73, 2A, ALL).");
 		}
 
-		const instagram = document.getElementById("instagram").value.trim();
-		if (!instagram) {
-			throw new Error("Saisissez un profil Instagram.");
+		const instagram = validateInstagramField();
+		if (!instagram || !form.checkValidity()) {
+			throw new Error("Saisissez le compte Instagram au format @moncompte, sans URL.");
 		}
 
 		const selectedPhoto = getPhotoSelection();
@@ -211,6 +248,7 @@
 
 	form.addEventListener("submit", async function (event) {
 		event.preventDefault();
+		validateInstagramField();
 		if (!form.checkValidity()) {
 			form.reportValidity();
 			return;
@@ -255,6 +293,14 @@
 				setStatus("Erreur: " + String(error && error.message ? error.message : error), true);
 			}
 		});
+	}
+
+	const instagramField = document.getElementById("instagram");
+	if (instagramField) {
+		instagramField.addEventListener("input", function () {
+			instagramField.setCustomValidity("");
+		});
+		instagramField.addEventListener("blur", validateInstagramField);
 	}
 
 	if (captchaRefresh) {

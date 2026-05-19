@@ -50,7 +50,16 @@
 						<input type="url" id="siteWeb" placeholder="https://..." />
 					</label>
 					<label><span class="label-title required-label">Instagram</span>
-						<input type="text" id="instagram" placeholder="@moncompte ou https://..." required />
+						<input
+							type="text"
+							id="instagram"
+							placeholder="@moncompte"
+							pattern="@[A-Za-z0-9._]{1,30}"
+							title="Saisissez uniquement le nom du compte Instagram au format @moncompte, sans URL."
+							autocomplete="off"
+							required
+						/>
+						<small class="field-note">Format attendu : <strong>@moncompte</strong>. Les liens Instagram complets ne sont pas acceptes.</small>
 					</label>
 					<label><span class="label-title">Facebook</span>
 						<input type="text" id="facebook" placeholder="@moncompte ou https://..." />
