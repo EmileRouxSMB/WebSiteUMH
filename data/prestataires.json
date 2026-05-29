@@ -1844,6 +1844,33 @@
       "enLigne": true,
       "cgAcceptee": true,
       "photoDepotUrl": "https://drive.google.com/file/d/1xqUl32u5Ru_T7Z8KQQ187RVdMx3Hi7z7/view?usp=drivesdk"
+    },
+    {
+      "nomCommercial": "Eulacrea",
+      "numeroSiret": 99084074600012,
+      "numeroDeTel": 688004149,
+      "email": "contact@eulacrea.fr",
+      "typeDePrestation": [
+        "Décoration",
+        "Cadeaux personnalisés",
+        "Papeterie"
+      ],
+      "departementsCouverts": [
+        "ALL"
+      ],
+      "siteWeb": "https://eulacrea.fr/particulier/",
+      "instagram": "@eulacrea",
+      "facebook": "https://www.facebook.com/share/1CE1MxDeZg/?mibextid=wwXIfr",
+      "tiktok": "@eulacrea",
+      "descriptionDesPrestationsProposees": "Bienvenue chez Eulacrea, un univers où la créativité rencontre votre inspiration. Ici, vous découvrirez une large gamme de créations coups de cœur, imaginées par des partenaires soigneusement sélectionnés, ainsi que des créations originales signées Eulacrea. Chaque projet est pensé pour donner vie à vos idées et embellir vos moments précieux.\n\nQuels sont les services proposés ?\n\nFaire-part, affiches, mugs, albums photo, décorations, cadeaux personnalisés… Certaines créations sont proposées à partir de modèles prêts à personnaliser, conçus avec soin, tandis que d’autres sont entièrement réalisées sur mesure, selon vos envies.\n\nChez Eulacrea, chaque création raconte une histoire : la vôtre.",
+      "personnalisationUMH": "",
+      "miseEnAvant": false,
+      "photo": "",
+      "dateInscription": "2026-05-28T22:00:00.000Z",
+      "dateMAJ": "",
+      "enLigne": false,
+      "cgAcceptee": true,
+      "photoDepotUrl": ""
     }
   ]
 }
