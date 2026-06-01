@@ -15,7 +15,8 @@
     "Patisserie",
     "Photo",
     "Photo / Vidéo",
-    "Service / Maitre d'hôtel"
+    "Service / Maitre d'hôtel",
+    "Traiteur"
   ],
   "prestataires": [
     {
@@ -1868,9 +1869,33 @@
       "photo": "",
       "dateInscription": "2026-05-28T22:00:00.000Z",
       "dateMAJ": "",
-      "enLigne": false,
+      "enLigne": true,
       "cgAcceptee": true,
       "photoDepotUrl": ""
+    },
+    {
+      "nomCommercial": "Toptoques",
+      "numeroSiret": 84027634900023,
+      "numeroDeTel": 646244439,
+      "email": "contact.toptoques@gmail.com",
+      "typeDePrestation": "Traiteur",
+      "departementsCouverts": [
+        "59",
+        "62"
+      ],
+      "siteWeb": "https://toptoques.fr",
+      "instagram": "@toptoques",
+      "facebook": "https://www.facebook.com/profile.php?id=100095073908251",
+      "tiktok": "",
+      "descriptionDesPrestationsProposees": "TopToques propose des prestations de traiteur événementiel entièrement sur mesure pour vos mariages et réceptions.\nNous nous adaptons à vos envies et à votre budget en proposant différents formats de prestation :\n\nVin d’honneur\nCocktail dînatoire\nBuffet froid et buffet chaud\nRepas servi à l’assiette\nBarbecue, brasero, plancha et tournebroche\nPrestations personnalisées selon vos besoins\n\nChaque prestation est entièrement adaptable afin de correspondre parfaitement à votre événement et à vos attentes.",
+      "personnalisationUMH": "",
+      "miseEnAvant": false,
+      "photo": "toptoques",
+      "dateInscription": "2026-05-30T22:00:00.000Z",
+      "dateMAJ": "",
+      "enLigne": true,
+      "cgAcceptee": true,
+      "photoDepotUrl": "https://drive.google.com/file/d/18I4GG3X4JfjSfeqkPNHx5PwuFvcTO9kx/view?usp=drivesdk"
     }
   ]
 }
