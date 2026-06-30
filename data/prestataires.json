@@ -1913,10 +1913,10 @@
       "descriptionDesPrestationsProposees": "Nous proposons une animation photo haut de gamme avec le Magic Miroir, un miroir interactif tactile alliant élégance et technologie. Cette prestation inclut l’installation complète de l’équipement, la mise en place d’une interface personnalisée aux couleurs de votre mariage, ainsi que l’impression instantanée des photos pour vos invités.\n\nLe Magic Miroir permet une expérience ludique et immersive : les convives posent, personnalisent leurs clichés (signatures, messages, effets) et repartent immédiatement avec un souvenir unique. Entièrement personnalisable, il s’intègre parfaitement à l’univers de votre mariage et apporte une touche moderne, élégante et mémorable à votre événement.",
       "personnalisationUMH": "",
       "miseEnAvant": false,
-      "photo": "",
+      "photo": "agence.piwix",
       "dateInscription": "2026-06-28T22:00:00.000Z",
       "dateMAJ": "",
-      "enLigne": false,
+      "enLigne": true,
       "cgAcceptee": true,
       "photoDepotUrl": "https://drive.google.com/file/d/1kORI_bDYsQneZFERBmLHxD4_iFurBaky/view?usp=drivesdk"
     },
@@ -1936,10 +1936,10 @@
       "descriptionDesPrestationsProposees": "CE JOUR-LÀ crée des accessoires personnalisés pour les mariages et les évènements importants, pensés pour apporter une touche personnelle à chaque moment de la journée.\n\nNous proposons des urnes de mariage personnalisées, avec ou sans lumière, des panneaux de bienvenue, des panneaux de direction, des écriteaux, des marque-places, des marque-verres, des numéros de table, des cake toppers, des bougeoirs LED, des soliflores ainsi que des cadeaux invités personnalisés.\n\nChaque création peut être adaptée avec les prénoms, la date du mariage, les couleurs ou certains détails de l’évènement. L’objectif est d’aider les futurs mariés à composer une décoration harmonieuse, cohérente et à leur image, qu’elle soit romantique, champêtre, bohème, moderne, colorée ou plus minimaliste.\n\nNos accessoires accompagnent les différents espaces du mariage : l’arrivée des invités, la cérémonie, la réception, les tables, l’espace urne, le livre d’or, le gâteau ou encore les cadeaux invités. Ils sont pensés pour être à la fois décoratifs et utiles : accueillir, guider, organiser, illuminer, recueillir les cartes et enveloppes ou remercier les proches avec un souvenir personnalisé.\n\nFabriquées en France, nos créations sont réalisées à la demande avec soin. Elles permettent de personnaliser la décoration du jour J tout en conservant certains éléments après l’évènement comme souvenirs.\n\nCE JOUR-LÀ s’adresse aux couples qui souhaitent une décoration de mariage délicate, personnalisée et facile à assortir grâce à plusieurs modèles, couleurs et accessoires complémentaires.",
       "personnalisationUMH": "",
       "miseEnAvant": false,
-      "photo": "",
+      "photo": "cejourla_fr",
       "dateInscription": "2026-06-28T22:00:00.000Z",
       "dateMAJ": "",
-      "enLigne": false,
+      "enLigne": true,
       "cgAcceptee": true,
       "photoDepotUrl": "https://drive.google.com/file/d/1UrlUAJHGyxQBpOq1QtLnD79LKeVE6CUP/view?usp=drivesdk"
     }
