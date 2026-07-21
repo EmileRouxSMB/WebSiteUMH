@@ -1968,6 +1968,36 @@
       "enLigne": true,
       "cgAcceptee": true,
       "photoDepotUrl": "https://drive.google.com/file/d/1YWvPhOils9D6uhA5AgDqQ-JjKBuoYL1l/view?usp=drivesdk"
+    },
+    {
+      "nomCommercial": "Party Project",
+      "numeroSiret": 98434622100018,
+      "numeroDeTel": 612923243,
+      "email": "contact@partyproject.fr",
+      "typeDePrestation": [
+        "Animation",
+        "Musique / DJ",
+        "Décoration",
+        "Autre"
+      ],
+      "departementsCouverts": [
+        "76",
+        "14",
+        "27"
+      ],
+      "siteWeb": "https://partyproject.fr",
+      "instagram": "@partyproject.fr",
+      "facebook": "",
+      "tiktok": "",
+      "descriptionDesPrestationsProposees": "Location de matériel de réception, \nLocation de Mobilier, \nLocation de tentes de réception, \nLocation de tireuses à bière, \nLocation de Sonorisation et Jeux de lumière",
+      "personnalisationUMH": "",
+      "miseEnAvant": false,
+      "photo": "",
+      "dateInscription": "2026-07-20T22:00:00.000Z",
+      "dateMAJ": "",
+      "enLigne": false,
+      "cgAcceptee": true,
+      "photoDepotUrl": "https://drive.google.com/file/d/183lcmYmkRhP33kcQs15JAHBwMlQz_lHX/view?usp=drivesdk"
     }
   ]
 }
