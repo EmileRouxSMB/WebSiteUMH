@@ -2044,6 +2044,29 @@
       "enLigne": false,
       "cgAcceptee": true,
       "photoDepotUrl": "https://drive.google.com/file/d/1uXY-3vP7YEGo9uMWy9T3b-cFBGIVg69H/view?usp=drivesdk"
+    },
+    {
+      "nomCommercial": "L'Instant Enchanté",
+      "numeroSiret": 88256884300032,
+      "numeroDeTel": 769015842,
+      "email": "contact@linstantenchante.com",
+      "typeDePrestation": "Décoration",
+      "departementsCouverts": [
+        "ALL"
+      ],
+      "siteWeb": "https://linstantenchante.com/decoratrice-mariage",
+      "instagram": "@linstantenchante.deco",
+      "facebook": "",
+      "tiktok": "@linstantenchante",
+      "descriptionDesPrestationsProposees": "L’Instant Enchanté vous accompagne dans la création d’une décoration de mariage élégante, harmonieuse et entièrement personnalisée selon votre univers, votre lieu et votre budget.\nJe vous propose plusieurs solutions afin de vous permettre de choisir l’accompagnement qui correspond réellement à vos besoins :\nDécoration & conception personnalisée\nCréation de votre univers décoratif : moodboard, palette de couleurs, sélection des éléments, conseils d’harmonisation et conception de chaque espace de votre mariage.\nAccompagnement décoration à distance\nUne solution accessible partout en France pour concevoir votre décoration étape par étape : moodboard personnalisé, plan d’implantation, liste d’achats, conseils et guides de montage.\nDécoration prête à installer\nVotre décoration est pensée, préparée et organisée en amont afin que vous puissiez la mettre en place facilement le jour J, avec des indications et guides de montage adaptés à votre projet.\nLocation de décoration\nLocation d’éléments décoratifs pour composer votre ambiance : décoration de table, bougeoirs, vases, signalétique, éléments de cérémonie et autres accessoires selon les disponibilités.\nCompositions florales artificielles\nCréation de compositions personnalisées en fleurs artificielles, coordonnées à votre palette et au style de votre mariage.\nPapeterie & signalétique personnalisées\nMenus, marque-places, numéros de table, plans de table, panneaux de bienvenue et autres créations assorties à votre décoration. Les créations peuvent être proposées en version numérique ou avec gestion de l’impression selon le projet.",
+      "personnalisationUMH": "",
+      "miseEnAvant": false,
+      "photo": "",
+      "dateInscription": "2026-08-09T22:00:00.000Z",
+      "dateMAJ": "",
+      "enLigne": false,
+      "cgAcceptee": true,
+      "photoDepotUrl": "https://drive.google.com/file/d/1k_W9ZtkvqDjP-AsEvAObq07EBjB8OH2P/view?usp=drivesdk"
     }
   ]
 }
