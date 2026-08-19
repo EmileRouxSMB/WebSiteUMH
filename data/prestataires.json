@@ -2067,6 +2067,31 @@
       "enLigne": false,
       "cgAcceptee": true,
       "photoDepotUrl": "https://drive.google.com/file/d/1k_W9ZtkvqDjP-AsEvAObq07EBjB8OH2P/view?usp=drivesdk"
+    },
+    {
+      "nomCommercial": "Maison Preciosa",
+      "numeroSiret": 88824626100026,
+      "numeroDeTel": 516490033,
+      "email": "contact@maisonpreciosa.fr",
+      "typeDePrestation": "Création robes de mariées",
+      "departementsCouverts": [
+        "40",
+        "64",
+        "65"
+      ],
+      "siteWeb": "https://www.maisonpreciosa.fr",
+      "instagram": "@maisonpreciosadax",
+      "facebook": "https://www.facebook.com/people/Maison-Preciosa/61554234105743/#",
+      "tiktok": "",
+      "descriptionDesPrestationsProposees": "Boutique de mariage au centre de Dax (Landes) : plus de 80 robes de mariée de créateurs, costumes du marié, tenues de cérémonie et accessoires. Essayage en salon privé sur rendez-vous, prix affichés en toute transparence. Notée 5,0/5 sur Google. À 45 min de Bayonne, 1h de Pau. Réservation en ligne sur www.maisonpreciosa.fr — 18 rue Neuve, 40100 Dax.",
+      "personnalisationUMH": "",
+      "miseEnAvant": false,
+      "photo": "",
+      "dateInscription": "2026-08-18T22:00:00.000Z",
+      "dateMAJ": "",
+      "enLigne": false,
+      "cgAcceptee": true,
+      "photoDepotUrl": "https://drive.google.com/file/d/10BbQMK-OLA4Voa6_0GQReTJ2McUi4UHg/view?usp=drivesdk"
     }
   ]
 }
